@@ -37,7 +37,13 @@ public class ProjectSpecificMethods extends BaseClass{
 
 	}
 	
-	public void formatDate() {
+	public static String removeSpaceInSIID(String securityInterestID) {
+		return securityInterestID.replaceAll("\\s", "");
+	}
+	
+	public static boolean lengthValidation(String securityInterestID) {
+		String[] chars=securityInterestID.split("");
+		return (chars.length==12)?true:false;
 		
 	}
 	

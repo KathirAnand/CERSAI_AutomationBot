@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.satfnRegBot.pageActions.ProjectSpecificMethods;
 import com.satfnRegBot.pages.DigitalSignPage;
 import com.satfnRegBot.pages.HomePage;
 import com.satfnRegBot.pages.LoginPage;
@@ -21,7 +22,9 @@ import com.satfnRegBot.utilities.ExcelUtility;
 public class SatisfactionRegisteration extends BaseClass {
 
 	/**
-	 * After the browser invoked, it will login to the application with valid credentials
+	 * After the browser invoked, it will login to the application with valid
+	 * credentials
+	 * 
 	 * @throws InterruptedException
 	 */
 	@BeforeClass
@@ -40,7 +43,7 @@ public class SatisfactionRegisteration extends BaseClass {
 			loginPage.setPassword(rb.getString("PASSWORD"));
 		}
 	}
-	
+
 	/**
 	 * After login, it will navigate to the SI Satisfaction Registration page
 	 */
@@ -57,9 +60,10 @@ public class SatisfactionRegisteration extends BaseClass {
 		userHome.clickHamburgerIcon();
 		userHome.clickSatisfaction();
 	}
-	
+
 	/**
 	 * To Register the SI Satisfaction and data's are feed through the Excel sheet
+	 * 
 	 * @throws Exception
 	 */
 	@Test
@@ -67,53 +71,78 @@ public class SatisfactionRegisteration extends BaseClass {
 		String SIId = "";
 		String sheetName = "Sheet1";
 		String closedDate = "";
-		String transID="";
+		String transID = "";
 		int dataRowNo;
 		ExcelUtility read = new ExcelUtility(FilePaths.DATASOURCE_SI_SATFN_REG);
 		int totalRowCount = read.getRowCount(sheetName);
 		int totalColCount = read.getCellCount(sheetName, totalRowCount);
-		
-		//if condition states, if there is no data available in the Excel sheet then it will not run the loop
+
+		// if condition states, if there is no data available in the Excel sheet then it
+		// will not run the loop
 		if (totalRowCount > 0) {
 			for (dataRowNo = 1; dataRowNo <= totalRowCount; dataRowNo++) {
 				for (int j = 0; j <= totalColCount; j++) {
 					if (j == 0) {
 						closedDate = read.getCellData(sheetName, dataRowNo, j);
-			
+
 					} else if (j == 1) {
 						SIId = read.getCellData(sheetName, dataRowNo, j);
+						SIId = ProjectSpecificMethods.removeSpaceInSIID(SIId);
 					}
 				}
-				
-				SatisfactionPage satfnPage = new SatisfactionPage(driver);
-				satfnPage.setSecurityInterestID(SIId);
-				satfnPage.clickProceedButton();
-				if (satfnPage.errorMsgIsDisplayed()) {
-					satfnPage.clickCloseButtonInErrorMsg();
-					read.setCellData(sheetName, dataRowNo, totalColCount, rb.getString("SATISFIED"));
-					logger.info(SIId+" is already satisfied");
+
+				try {
+					if (SIId!=null && SIId!="") {
+						
+						if(!ProjectSpecificMethods.lengthValidation(SIId)) {
+							read.setCellData(sheetName, dataRowNo, totalColCount, rb.getString("LENGTH_ERR_MSG"));
+							logger.info(SIId + " is not in 12 digits. SI ID must be in 12 digits");
+							continue;
+						}
+						SatisfactionPage satfnPage = new SatisfactionPage(driver);
+						satfnPage.setSecurityInterestID(SIId);
+						satfnPage.clickProceedButton();
+						if (satfnPage.errorMsgIsDisplayed()) {
+							satfnPage.clickCloseButtonInErrorMsg();
+							read.setCellData(sheetName, dataRowNo, totalColCount, rb.getString("SATISFIED"));
+							logger.info(SIId + " is already satisfied");
+							continue;
+						}
+
+						SIDetailsPage detailsPage = new SIDetailsPage(driver);
+						detailsPage.setDate(closedDate);
+
+						detailsPage.selectReasonUseKeyboard();
+
+						if (detailsPage.reasonForDelayIsDisplayed()) {
+							detailsPage.setReason(rb.getString("REASON"));
+						}
+
+						detailsPage.clickSubmitButton();
+						SatisfactionSuccessPage successPage = new SatisfactionSuccessPage(driver);
+						transID = successPage.getTransactionID();
+
+						// enters the Transaction ID in log
+						logger.info(SIId + " is satisfied with the Transaction ID " + transID);
+						// Enters the transaction ID into the Excel sheet
+						read.setCellData(sheetName, dataRowNo, totalColCount, transID);
+						successPage.clickBackButton();
+
+					} else if (SIId == null || SIId == "") {
+						read.setCellData(sheetName, dataRowNo, totalColCount, rb.getString("SATISFIED"));
+						logger.info(SIId + " is Not valid or empty");
+						continue;
+					}
+				} catch (Exception ex) {
+					ex.printStackTrace();
+					UserHomePage userHome = new UserHomePage(driver);
+					userHome.clickHamburgerIcon();
+					userHome.clickSatisfaction();
 					continue;
 				}
-				
-				SIDetailsPage detailsPage = new SIDetailsPage(driver);
-				detailsPage.setDate(closedDate);
-				
-				detailsPage.selectReasonUseKeyboard();
-				
-				if(detailsPage.reasonForDelayIsDisplayed()) {
-					detailsPage.setReason(rb.getString("REASON"));
-				}
-				
-				detailsPage.clickSubmitButton();
-				SatisfactionSuccessPage successPage = new SatisfactionSuccessPage(driver);
-				transID = successPage.getTransactionID();
-				
-				//enters the Transaction ID in log
-				logger.info(SIId+" is satisfied with the Transaction ID "+transID);
-				//Enters the transaction ID into the Excel sheet
-				read.setCellData(sheetName, dataRowNo, totalColCount, transID);
-				successPage.clickBackButton();
+
 			}
+
 		}
 	}
 

@@ -1,0 +1,6 @@
+Remote Repository URL: https://github.com/KathirAnand/CERSAI_AutomationBot.git
+
+User Name: Kathiravan
+User Email: kathiranand434@gmail.com
+
+Access Token: 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

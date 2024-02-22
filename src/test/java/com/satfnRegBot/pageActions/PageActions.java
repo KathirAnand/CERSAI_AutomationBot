@@ -232,7 +232,7 @@ public class PageActions extends BaseClass{
 	}
 	
 	protected String getTextOfElement(WebElement element) {
-		wait  = new WebDriverWait(driver,Duration.ofSeconds(15));
+		wait  = new WebDriverWait(driver,Duration.ofSeconds(40));
 		wait.until(ExpectedConditions.visibilityOf(element));
 		return element.getText();
 	}
