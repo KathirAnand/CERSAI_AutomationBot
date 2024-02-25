@@ -1,7 +1,5 @@
 package com.satfnRegBot.utilities;
 
-import com.satfnRegBot.testBase.FilePaths;
-
 public class TestDataProvider {
 
 	public static  Object[][] getTestData(String filePath,String sheetName) throws Exception{
@@ -50,8 +48,4 @@ public class TestDataProvider {
 		
 	}
 	
-	public static void main(String[] args) throws Exception {
-		String sheetName = "Sheet1";	
-		getTestData(FilePaths.DATASOURCE_SI_SATFN_REG,sheetName);
-	}
 }

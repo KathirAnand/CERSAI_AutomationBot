@@ -31,6 +31,7 @@ public class SatisfactionRegisteration extends BaseClass {
 	public void loginAsUser() throws InterruptedException {
 		HomePage homePage = new HomePage(driver);
 		homePage.clickLoginButton();
+		Thread.sleep(1000);
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.setLoginID(rb.getString("LOGIN_ID"));
 		loginPage.setPassword(rb.getString("PASSWORD"));
@@ -135,6 +136,7 @@ public class SatisfactionRegisteration extends BaseClass {
 					}
 				} catch (Exception ex) {
 					ex.printStackTrace();
+					read.setCellData(sheetName, dataRowNo, totalColCount, "");
 					UserHomePage userHome = new UserHomePage(driver);
 					userHome.clickHamburgerIcon();
 					userHome.clickSatisfaction();

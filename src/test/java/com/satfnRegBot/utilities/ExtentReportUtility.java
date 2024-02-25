@@ -65,7 +65,6 @@ public class ExtentReportUtility implements ITestListener{
 			ex.printStackTrace();
 		}
 		
-		
 		test.log(Status.FAIL, "Test Failed");
 		test.log(Status.FAIL, result.getThrowable().getMessage());
 	}
