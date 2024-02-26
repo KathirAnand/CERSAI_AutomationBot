@@ -20,6 +20,9 @@ public class SatisfactionPage extends BasePage{
 	@FindBy(xpath="//span[text()='This Security Interest is already satisfied.']")
 	protected WebElement alreadySatisfiedErrorMsg;
 	
+	@FindBy(xpath="//span[text()='Field must begin with either 1 or 4.']")
+	protected WebElement beginWith12Or4ErrMsg;
+	
 	@FindBy(xpath="//button[text()='×']")
 	protected WebElement closeButtonAtErrorMsg;
 	

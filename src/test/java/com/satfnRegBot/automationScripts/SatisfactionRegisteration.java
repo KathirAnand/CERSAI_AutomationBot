@@ -22,6 +22,11 @@ import com.satfnRegBot.utilities.ExcelUtility;
 public class SatisfactionRegisteration extends BaseClass {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * After the browser invoked, it will login to the application with valid
 	 * credentials
 	 * 
@@ -33,8 +38,12 @@ public class SatisfactionRegisteration extends BaseClass {
 		homePage.clickLoginButton();
 		Thread.sleep(1000);
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.setLoginID(rb.getString("LOGIN_ID"));
-		loginPage.setPassword(rb.getString("PASSWORD"));
+		System.out.println(HomePage.actualUserId);
+		System.out.println(HomePage.actualPassword);
+		if(actualUserId!=null&&actualPassword!=null) {
+			loginPage.setLoginID(actualUserId);
+			loginPage.setPassword(actualPassword);
+		}
 		Thread.sleep(10000);
 		loginPage.clickSubmitButton();
 		while (loginPage.invalidCaptchaMsg()) {
@@ -74,7 +83,7 @@ public class SatisfactionRegisteration extends BaseClass {
 		String closedDate = "";
 		String transID = "";
 		int dataRowNo;
-		ExcelUtility read = new ExcelUtility(FilePaths.DATASOURCE_SI_SATFN_REG);
+		ExcelUtility read = new ExcelUtility(HomePage.excelPath);
 		int totalRowCount = read.getRowCount(sheetName);
 		int totalColCount = read.getCellCount(sheetName, totalRowCount);
 

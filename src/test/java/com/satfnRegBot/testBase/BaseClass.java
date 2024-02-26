@@ -12,13 +12,20 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+
+import com.satfnRegBot.userInterface.HomePage;
+
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-public class BaseClass {
+public class BaseClass extends HomePage{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected static WebDriver driver;
 	public static ResourceBundle rb;
 	public static Logger logger;
