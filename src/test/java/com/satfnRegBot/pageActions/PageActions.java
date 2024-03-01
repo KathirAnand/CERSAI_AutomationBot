@@ -17,6 +17,10 @@ import com.satfnRegBot.testBase.BaseClass;
 
 public class PageActions extends BaseClass{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public WebDriverWait wait;
 	public static Actions action;
 	private String text = "";

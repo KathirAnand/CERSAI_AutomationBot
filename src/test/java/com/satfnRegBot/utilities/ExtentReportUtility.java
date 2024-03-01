@@ -10,13 +10,16 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.satfnRegBot.pageActions.ProjectSpecificMethods;
+import com.satfnRegBot.testBase.BaseClass;
 import com.satfnRegBot.testBase.FilePaths;
 
-public class ExtentReportUtility implements ITestListener{
+public class ExtentReportUtility extends BaseClass implements ITestListener{
 
-	public ExtentSparkReporter sparkReporter;
-	public ExtentReports extent;
-	public ExtentTest test;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 
 	String repName;
 	
@@ -27,7 +30,7 @@ public class ExtentReportUtility implements ITestListener{
 		String timeStamp = ProjectSpecificMethods.getTimestamp();// time stamp
 		repName = "Test-Report-" + timeStamp + ".html";
 
-		sparkReporter = new ExtentSparkReporter(FilePaths.REPORT_HOME + repName);// specify location of the report
+		sparkReporter = new ExtentSparkReporter(FilePaths.USER_HOME);// specify location of the report
 
 		sparkReporter.config().setDocumentTitle("Veritas CERSAI SI Automation Report"); // Title of report
 		sparkReporter.config().setReportName("SI Satisfaction Registration Bot Report"); // name of the report

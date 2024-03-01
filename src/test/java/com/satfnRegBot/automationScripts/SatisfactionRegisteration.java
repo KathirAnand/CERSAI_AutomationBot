@@ -13,7 +13,6 @@ import com.satfnRegBot.pages.SatisfactionPage;
 import com.satfnRegBot.pages.SatisfactionSuccessPage;
 import com.satfnRegBot.pages.UserHomePage;
 import com.satfnRegBot.testBase.BaseClass;
-import com.satfnRegBot.testBase.FilePaths;
 import com.satfnRegBot.utilities.ExcelUtility;
 
 /**
@@ -38,19 +37,21 @@ public class SatisfactionRegisteration extends BaseClass {
 		homePage.clickLoginButton();
 		Thread.sleep(1000);
 		LoginPage loginPage = new LoginPage(driver);
-		System.out.println(HomePage.actualUserId);
-		System.out.println(HomePage.actualPassword);
-		if(actualUserId!=null&&actualPassword!=null) {
-			loginPage.setLoginID(actualUserId);
-			loginPage.setPassword(actualPassword);
+		System.out.println(actualUserId);
+		System.out.println(actualPassword);
+		if (actualUserId == null && actualPassword == null) {
+			actualUserId = props.getProperty("LOGIN_ID");
+			actualPassword = props.getProperty("PASSWORD");
 		}
+		loginPage.setLoginID(actualUserId);
+		loginPage.setPassword(actualPassword);
 		Thread.sleep(10000);
 		loginPage.clickSubmitButton();
 		while (loginPage.invalidCaptchaMsg()) {
 			loginPage.clickGoToHomeLink();
 			homePage.clickLoginButton();
-			loginPage.setLoginID(rb.getString("LOGIN_ID"));
-			loginPage.setPassword(rb.getString("PASSWORD"));
+			loginPage.setLoginID(actualUserId);
+			loginPage.setPassword(actualPassword);
 		}
 	}
 
@@ -83,10 +84,27 @@ public class SatisfactionRegisteration extends BaseClass {
 		String closedDate = "";
 		String transID = "";
 		int dataRowNo;
-		ExcelUtility read = new ExcelUtility(HomePage.excelPath);
+		int dataRowNoSetExcel=0;
+		ExcelUtility read = new ExcelUtility(excelPath);
+		ExcelUtility write = new ExcelUtility(excelWritePath);
+//		ExcelUtility read = new ExcelUtility(FilePaths.DATASOURCE_SI_SATFN_REG);
+//		ExcelUtility read = new ExcelUtility(FilePaths.JAREXCEL);
 		int totalRowCount = read.getRowCount(sheetName);
 		int totalColCount = read.getCellCount(sheetName, totalRowCount);
-
+		for (int j = 0; j <= totalColCount; j++) {
+			switch (j) {
+			case 0:
+				write.setCellData(sheetName, dataRowNoSetExcel, j, "Closed Date");
+				break;
+			case 1:
+				write.setCellData(sheetName, dataRowNoSetExcel, j, "Security Interest Id");
+				break;
+			case 2:
+				write.setCellData(sheetName, dataRowNoSetExcel, j, "Transaction ID/Comments");
+				break;
+			}
+		}
+		
 		// if condition states, if there is no data available in the Excel sheet then it
 		// will not run the loop
 		if (totalRowCount > 0) {
@@ -102,11 +120,24 @@ public class SatisfactionRegisteration extends BaseClass {
 				}
 
 				try {
-					if (SIId!=null && SIId!="") {
-						
-						if(!ProjectSpecificMethods.lengthValidation(SIId)) {
-							read.setCellData(sheetName, dataRowNo, totalColCount, rb.getString("LENGTH_ERR_MSG"));
+					if (SIId != null && SIId != "") {
+
+						if (!ProjectSpecificMethods.lengthValidation(SIId)) {
+//							read.setCellData(sheetName, dataRowNo, totalColCount, props.getProperty("LENGTH_ERR_MSG"));
 							logger.info(SIId + " is not in 12 digits. SI ID must be in 12 digits");
+							for (int j = 0; j <= totalColCount; j++) {
+								switch (j) {
+								case 0:
+									write.setCellData(sheetName, dataRowNo, j, closedDate);
+									break;
+								case 1:
+									write.setCellData(sheetName, dataRowNo, j, SIId);
+									break;
+								case 2:
+									write.setCellData(sheetName, dataRowNo, j, transID);
+									break;
+								}
+							}
 							continue;
 						}
 						SatisfactionPage satfnPage = new SatisfactionPage(driver);
@@ -114,18 +145,33 @@ public class SatisfactionRegisteration extends BaseClass {
 						satfnPage.clickProceedButton();
 						if (satfnPage.errorMsgIsDisplayed()) {
 							satfnPage.clickCloseButtonInErrorMsg();
-							read.setCellData(sheetName, dataRowNo, totalColCount, rb.getString("SATISFIED"));
+//							read.setCellData(sheetName, dataRowNo, totalColCount, props.getProperty("SATISFIED"));
 							logger.info(SIId + " is already satisfied");
+							for (int j = 0; j <= totalColCount; j++) {
+								switch (j) {
+								case 0:
+									write.setCellData(sheetName, dataRowNo, j, closedDate);
+									break;
+								case 1:
+									write.setCellData(sheetName, dataRowNo, j, SIId);
+									break;
+								case 2:
+									write.setCellData(sheetName, dataRowNo, j, props.getProperty("SATISFIED"));
+									break;
+								}
+							}
 							continue;
 						}
 
 						SIDetailsPage detailsPage = new SIDetailsPage(driver);
 						detailsPage.setDate(closedDate);
 
+//						Thread.sleep(1000);
+
 						detailsPage.selectReasonUseKeyboard();
 
 						if (detailsPage.reasonForDelayIsDisplayed()) {
-							detailsPage.setReason(rb.getString("REASON"));
+							detailsPage.setReason(props.getProperty("REASON"));
 						}
 
 						detailsPage.clickSubmitButton();
@@ -135,17 +181,57 @@ public class SatisfactionRegisteration extends BaseClass {
 						// enters the Transaction ID in log
 						logger.info(SIId + " is satisfied with the Transaction ID " + transID);
 						// Enters the transaction ID into the Excel sheet
-						read.setCellData(sheetName, dataRowNo, totalColCount, transID);
+//						read.setCellData(sheetName, dataRowNo, totalColCount, transID);
+						for (int j = 0; j <= totalColCount; j++) {
+							switch (j) {
+							case 0:
+								write.setCellData(sheetName, dataRowNo, j, closedDate);
+								break;
+							case 1:
+								write.setCellData(sheetName, dataRowNo, j, SIId);
+								break;
+							case 2:
+								write.setCellData(sheetName, dataRowNo, j, transID);
+								break;
+							}
+						}
 						successPage.clickBackButton();
 
 					} else if (SIId == null || SIId == "") {
-						read.setCellData(sheetName, dataRowNo, totalColCount, rb.getString("SATISFIED"));
+						read.setCellData(sheetName, dataRowNo, totalColCount, props.getProperty("EMPTYMSG"));
 						logger.info(SIId + " is Not valid or empty");
+						for (int j = 0; j <= totalColCount; j++) {
+							switch (j) {
+							case 0:
+								write.setCellData(sheetName, dataRowNo, j, closedDate);
+								break;
+							case 1:
+								write.setCellData(sheetName, dataRowNo, j, SIId);
+								break;
+							case 2:
+								write.setCellData(sheetName, dataRowNo, j, props.getProperty("EMPTYMSG"));
+								break;
+							}
+						}
 						continue;
 					}
 				} catch (Exception ex) {
 					ex.printStackTrace();
-					read.setCellData(sheetName, dataRowNo, totalColCount, "");
+//					read.setCellData(sheetName, dataRowNo, totalColCount, props.getProperty("UNHANDLED_ERR_MSG"));
+					for (int j = 0; j <= totalColCount; j++) {
+						switch (j) {
+						case 0:
+							write.setCellData(sheetName, dataRowNo, j, closedDate);
+							break;
+						case 1:
+							write.setCellData(sheetName, dataRowNo, j, SIId);
+							break;
+						case 2:
+							write.setCellData(sheetName, dataRowNo, j, props.getProperty("UNHANDLED_ERR_MSG"));
+							break;
+						}
+					}
+					driver.navigate().refresh();
 					UserHomePage userHome = new UserHomePage(driver);
 					userHome.clickHamburgerIcon();
 					userHome.clickSatisfaction();

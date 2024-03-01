@@ -17,10 +17,22 @@ import java.text.SimpleDateFormat;
 
 public class ProjectSpecificMethods extends BaseClass{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public static String getTimestamp() {
-		return new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+		return new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date());
 	}
 	
+	public static String getDatestampWithMinutes() {
+		return new SimpleDateFormat("dd_MM_yyyy_HH_mm").format(new Date());
+	}
+	
+	public static String getExcelNameForWrite() {
+		return "SI_SatisfiedData_"+getDatestampWithMinutes()+".xlsx";
+	}
 	public static String captureScreen(String tname) throws IOException {
 
 		String timeStamp = getTimestamp();
@@ -44,7 +56,5 @@ public class ProjectSpecificMethods extends BaseClass{
 	public static boolean lengthValidation(String securityInterestID) {
 		String[] chars=securityInterestID.split("");
 		return (chars.length==12)?true:false;
-		
 	}
-	
 }
