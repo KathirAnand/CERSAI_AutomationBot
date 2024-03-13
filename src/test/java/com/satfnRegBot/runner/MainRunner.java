@@ -19,6 +19,7 @@ import javax.swing.border.EmptyBorder;
 
 import org.testng.TestListenerAdapter;
 import org.testng.TestNG;
+import javax.swing.JPasswordField;
 
 public class MainRunner extends JFrame {
 
@@ -28,17 +29,19 @@ public class MainRunner extends JFrame {
 	protected static String excelPath;
 	public static String actualPassword;
 	protected static String configPath;
+	protected static String actualUserPIN;
 
 	public static TestNG testNG;
 	public static TestListenerAdapter tla;
 	private JTextField userID;
 	private JLabel message;
-	private JTextField password;
 	private JFileChooser fileChooser;
 	private JButton selectFileBtn;
 	private JLabel selectedFilePath;
 	private JLabel lblNewLabel_2;
 	private JButton select_config;
+	private JPasswordField password_inputField;
+	private JTextField userPIN_inputField;
 
 	/**
 	 * Launch the application.
@@ -65,39 +68,37 @@ public class MainRunner extends JFrame {
 		setTitle("Automation InvBot");
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 350);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("User ID");
-		lblNewLabel.setBounds(10, 54, 83, 19);
-		contentPane.add(lblNewLabel);
+		JLabel userId_label = new JLabel("User ID");
+		userId_label.setBounds(10, 54, 83, 19);
+		contentPane.add(userId_label);
 
 		userID = new JTextField();
+		userId_label.setLabelFor(userID);
 		userID.setBounds(103, 53, 230, 20);
 		contentPane.add(userID);
 		userID.setColumns(10);
 
-		JLabel lblNewLabel_1 = new JLabel("password");
-		lblNewLabel_1.setBounds(10, 91, 83, 14);
-		contentPane.add(lblNewLabel_1);
-
-		password = new JTextField();
-		password.setBounds(103, 88, 230, 20);
-		contentPane.add(password);
-		password.setColumns(10);
+		JLabel password_label = new JLabel("password");
+		password_label.setBounds(10, 91, 83, 14);
+		contentPane.add(password_label);
 
 		JButton btnNewButton = new JButton("Start");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actualUserId = userID.getText();
-				actualPassword = password.getText();
+				actualPassword = String.valueOf(password_inputField.getPassword());
+				actualUserPIN = userPIN_inputField.getText();
 				if (actualUserId != null && actualUserId != "") {
 					if (actualPassword != null && actualPassword != "") {
-
+						
+						
 						tla = new TestListenerAdapter();
 						testNG = new TestNG();
 						// path of the XML file
@@ -108,8 +109,7 @@ public class MainRunner extends JFrame {
 //						suiteXMLs.add(path);
 //						testNG.setTestSuites(suiteXMLs);
 
-						testNG.setTestClasses(
-								new Class[] { com.satfnRegBot.automationScripts.SatisfactionRegisteration.class });
+						testNG.setTestClasses(new Class[] { com.satfnRegBot.automationScripts.SatisfactionRegisteration.class });
 						testNG.run();
 					} else {
 						message.setText("Please enter Password");
@@ -120,7 +120,7 @@ public class MainRunner extends JFrame {
 
 			}
 		});
-		btnNewButton.setBounds(157, 207, 89, 23);
+		btnNewButton.setBounds(155, 260, 89, 23);
 		contentPane.add(btnNewButton);
 
 		selectFileBtn = new JButton("Select File");
@@ -137,11 +137,11 @@ public class MainRunner extends JFrame {
 				}
 			}
 		});
-		selectFileBtn.setBounds(10, 128, 108, 23);
+		selectFileBtn.setBounds(10, 177, 108, 23);
 		contentPane.add(selectFileBtn);
 
 		selectedFilePath = new JLabel("");
-		selectedFilePath.setBounds(10, 182, 414, 14);
+		selectedFilePath.setBounds(10, 235, 414, 14);
 		contentPane.add(selectedFilePath);
 
 		lblNewLabel_2 = new JLabel("CERSAI Satisfaction RegBot");
@@ -162,8 +162,24 @@ public class MainRunner extends JFrame {
 				}
 			}
 		});
-		select_config.setBounds(210, 128, 108, 23);
+		select_config.setBounds(208, 177, 108, 23);
 		contentPane.add(select_config);
+		
+		password_inputField = new JPasswordField();
+		password_label.setLabelFor(password_inputField);
+		password_inputField.setBounds(103, 88, 230, 20);
+		contentPane.add(password_inputField);
+		
+		JLabel userPIN_label = new JLabel("User PIN");
+		userPIN_label.setBounds(10, 135, 83, 14);
+		contentPane.add(userPIN_label);
+		
+		userPIN_inputField = new JTextField();
+		userPIN_inputField.setText("ccc12345");
+		userPIN_label.setLabelFor(userPIN_inputField);
+		userPIN_inputField.setColumns(10);
+		userPIN_inputField.setBounds(103, 132, 230, 20);
+		contentPane.add(userPIN_inputField);
 
 	}
 }

@@ -18,5 +18,11 @@ public class FilePaths {
 	public static final String REPORT_HOME=USER_HOME+"reports"+File.separator;
 	public static final String EXTENTREPORT_FILE=REPORT_HOME+"test-output\\FailedTestsScreenshots\\";
 	public static final String SCREENSHOT_HOME=USER_HOME+"screenshots"+File.separator;
+	public static final String AUTOIT_HOME = USER_HOME+"autoITScripts"+File.separator;
+	public static final String AUTOIT_MANUALSCRIPT = AUTOIT_HOME+"withManualClick.exe";
+	public static final String AUTOIT_CLICKSIGN = AUTOIT_HOME+"clickSign.exe";
+	public static final String AUTOIT_ENTERPIN = AUTOIT_HOME+"enterPIN.exe";
+	public static final String TESSDATA_HOME = USER_HOME+"tessdata"+File.separator;
+	
 	
 }

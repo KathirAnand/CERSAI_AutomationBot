@@ -7,6 +7,11 @@ import org.openqa.selenium.support.FindBy;
 
 public class SatisfactionPage extends BasePage{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public SatisfactionPage(WebDriver driver) {
 		super(driver);
 	}

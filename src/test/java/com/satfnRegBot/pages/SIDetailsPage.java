@@ -9,6 +9,11 @@ import org.openqa.selenium.support.FindBy;
 
 public class SIDetailsPage extends BasePage {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public SIDetailsPage(WebDriver driver) {
 		super(driver);
 	}

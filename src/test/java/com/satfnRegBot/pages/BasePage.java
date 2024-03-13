@@ -7,6 +7,10 @@ import com.satfnRegBot.pageActions.PageActions;
 
 public class BasePage extends PageActions{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected WebDriver driver;
 	protected PageActions action = new PageActions();
 	public BasePage(WebDriver driver) {

@@ -2,6 +2,10 @@ package com.satfnRegBot.pageActions;
 
 import java.util.Date;
 
+import net.sourceforge.tess4j.ITesseract;
+import net.sourceforge.tess4j.Tesseract;
+import net.sourceforge.tess4j.TesseractException;
+
 import org.openqa.selenium.TakesScreenshot;
 
 import com.satfnRegBot.testBase.BaseClass;
@@ -15,7 +19,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 
-public class ProjectSpecificMethods extends BaseClass{
+public class ProjectSpecificMethods extends BaseClass {
 
 	/**
 	 * 
@@ -25,14 +29,19 @@ public class ProjectSpecificMethods extends BaseClass{
 	public static String getTimestamp() {
 		return new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(new Date());
 	}
-	
+
 	public static String getDatestampWithMinutes() {
 		return new SimpleDateFormat("dd_MM_yyyy_HH_mm").format(new Date());
 	}
-	
+
 	public static String getExcelNameForWrite() {
-		return "SI_SatisfiedData_"+getDatestampWithMinutes()+".xlsx";
+		return "SI_SatisfiedData_" + getDatestampWithMinutes() + ".xlsx";
 	}
+
+	public static String getCaptchaNameWithMinutes() {
+		return "captcha" + getDatestampWithMinutes() + ".png";
+	}
+
 	public static String captureScreen(String tname) throws IOException {
 
 		String timeStamp = getTimestamp();
@@ -46,15 +55,21 @@ public class ProjectSpecificMethods extends BaseClass{
 			e.getMessage();
 		}
 		return destination;
-
 	}
-	
+
 	public static String removeSpaceInSIID(String securityInterestID) {
 		return securityInterestID.replaceAll("\\s", "");
 	}
-	
+
 	public static boolean lengthValidation(String securityInterestID) {
-		String[] chars=securityInterestID.split("");
-		return (chars.length==12)?true:false;
+		String[] chars = securityInterestID.split("");
+		return (chars.length == 12) ? true : false;
+	}
+
+	public String extractTextFromImage(String path) throws TesseractException {
+		ITesseract image = new Tesseract();
+		image.setDatapath(FilePaths.TESSDATA_HOME);
+		image.setLanguage("eng");
+		return image.doOCR(new File(path));
 	}
 }

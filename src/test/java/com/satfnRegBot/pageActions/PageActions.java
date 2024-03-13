@@ -127,7 +127,7 @@ public class PageActions extends BaseClass{
 			wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.elementToBeClickable(ele));
 			action = new Actions(driver);
-			text = ele.getText();
+			setText(ele.getText());
 			action.moveToElement(ele).click().build().perform();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -253,6 +253,12 @@ public class PageActions extends BaseClass{
 	
 	protected void sendKeysUseKeyboard(WebElement element,String value) {
 		element.sendKeys(value);
+	}
+	public String getText() {
+		return text;
+	}
+	public void setText(String text) {
+		this.text = text;
 	}
 	
 	

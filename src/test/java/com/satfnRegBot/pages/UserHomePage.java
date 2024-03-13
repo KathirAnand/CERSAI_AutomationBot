@@ -6,6 +6,11 @@ import org.openqa.selenium.support.FindBy;
 
 public class UserHomePage extends BasePage{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public UserHomePage(WebDriver driver) {
 		super(driver);
 	}
@@ -19,6 +24,9 @@ public class UserHomePage extends BasePage{
 	@FindBy(xpath="//a[text()='Satisfaction']")
 	protected WebElement SISatisfactionLink;
 	
+	@FindBy(xpath="//a[text()='Registration']")
+	protected WebElement SIRegistrationLink;
+	
 	@FindBy(css="#userClass")
 	protected WebElement notificationMessage;
 	
@@ -28,6 +36,10 @@ public class UserHomePage extends BasePage{
 	
 	public void clickSatisfaction() {
 		moveAndClick(securityInterestLink, SISatisfactionLink);
+	}
+	
+	public void clickRegistration() {
+		moveAndClick(securityInterestLink, SIRegistrationLink);
 	}
 	
 

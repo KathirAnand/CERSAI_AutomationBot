@@ -5,7 +5,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
+//import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
@@ -23,14 +23,12 @@ public class ExtentReportUtility extends BaseClass implements ITestListener{
 
 	String repName;
 	
-	public void startReport() {
-		
-	}
+	
 	public void onStart(ITestContext testContext) {
 		String timeStamp = ProjectSpecificMethods.getTimestamp();// time stamp
 		repName = "Test-Report-" + timeStamp + ".html";
 
-		sparkReporter = new ExtentSparkReporter(FilePaths.USER_HOME);// specify location of the report
+		sparkReporter = new ExtentSparkReporter(FilePaths.USER_HOME+repName);// specify location of the report
 
 		sparkReporter.config().setDocumentTitle("Veritas CERSAI SI Automation Report"); // Title of report
 		sparkReporter.config().setReportName("SI Satisfaction Registration Bot Report"); // name of the report

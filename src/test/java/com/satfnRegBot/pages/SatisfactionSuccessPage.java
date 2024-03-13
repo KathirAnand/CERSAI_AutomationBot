@@ -11,6 +11,11 @@ import com.satfnRegBot.utilities.ExcelUtility;
 
 public class SatisfactionSuccessPage extends BasePage{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public SatisfactionSuccessPage(WebDriver driver) {
 		super(driver);
 	}

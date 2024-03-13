@@ -12,6 +12,7 @@ import org.apache.logging.log4j.Logger;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+//import org.testng.Reporter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -56,6 +57,11 @@ public class BaseClass extends MainRunner{
 				props = new Properties();
 				FileInputStream ip = new FileInputStream(propertiesFilePath);
 				props.load(ip);
+			}else {
+				props = new Properties();
+				propertiesFilePath = FilePaths.USER_HOME+"config.properties";
+				FileInputStream ip = new FileInputStream(propertiesFilePath);
+				props.load(ip);
 			}
 //			rb = ResourceBundle.getBundle("config"); // to get the properties file
 			logger = LogManager.getLogger(this.getClass()); // to initiate the logger
@@ -84,6 +90,7 @@ public class BaseClass extends MainRunner{
 			opt.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
 			opt.addArguments("--remote-allow-origins=*");
 			driver = new ChromeDriver(opt);
+//			Reporter.log("Chrome browser opened",true);
 		} else if (browser.equalsIgnoreCase("edge")) {
 			EdgeOptions opt = new EdgeOptions();
 			opt.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
