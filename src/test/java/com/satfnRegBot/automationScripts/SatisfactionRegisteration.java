@@ -148,10 +148,12 @@ public class SatisfactionRegisteration extends BaseClass {
 					if (SIId != null && SIId != "") {
 
 						if (!ProjectSpecificMethods.lengthValidation(SIId)) {
+							
 							read.setCellData(sheetName, dataRowNo, totalColCount, props.getProperty("LENGTH_ERR_MSG"));
 							Reporter.log(SIId + " is not in 12 digits. SI ID must be in 12 digits");
 							logger.info(SIId + " is not in 12 digits. SI ID must be in 12 digits");
-
+							ProjectSpecificMethods.writeLogIntoTxtFile(SIId + " is not in 12 digits. SI ID must be in 12 digits");
+							
 //							for (int j = 0; j <= totalColCount; j++) {
 //								switch (j) {
 //								case 0:
@@ -172,9 +174,12 @@ public class SatisfactionRegisteration extends BaseClass {
 						satfnPage.clickProceedButton();
 						if (satfnPage.errorMsgIsDisplayed()) {
 							satfnPage.clickCloseButtonInErrorMsg();
+							
 							read.setCellData(sheetName, dataRowNo, totalColCount, props.getProperty("SATISFIED"));
 							Reporter.log(SIId + " is already satisfied");
 							logger.info(SIId + " is already satisfied");
+							ProjectSpecificMethods.writeLogIntoTxtFile(SIId + " is already satisfied");
+							
 //							for (int j = 0; j <= totalColCount; j++) {
 //								switch (j) {
 //								case 0:
@@ -211,6 +216,8 @@ public class SatisfactionRegisteration extends BaseClass {
 						logger.info(SIId + " is satisfied with the Transaction ID " + transID);
 						// Enters the transaction ID into the Excel sheet
 						read.setCellData(sheetName, dataRowNo, totalColCount, transID);
+						ProjectSpecificMethods.writeLogIntoTxtFile(SIId + " is satisfied with the Transaction ID " + transID);
+						
 //						for (int j = 0; j <= totalColCount; j++) {
 //							switch (j) {
 //							case 0:
@@ -227,9 +234,12 @@ public class SatisfactionRegisteration extends BaseClass {
 						successPage.clickBackButton();
 
 					} else if (SIId == null || SIId == "") {
+						
 						read.setCellData(sheetName, dataRowNo, totalColCount, props.getProperty("EMPTYMSG"));
 						Reporter.log("Security Interest ID is Not valid or empty");
 						logger.info("Security Interest ID is Not valid or empty");
+						ProjectSpecificMethods.writeLogIntoTxtFile("Security Interest ID is Not valid or empty");
+						
 //						for (int j = 0; j <= totalColCount; j++) {
 //							switch (j) {
 //							case 0:
@@ -247,8 +257,11 @@ public class SatisfactionRegisteration extends BaseClass {
 					}
 				} catch (Exception ex) {
 					ex.printStackTrace();
+					
 					read.setCellData(sheetName, dataRowNo, totalColCount, props.getProperty("UNHANDLED_ERR_MSG"));
 					Reporter.log("Unhandled error message");
+					ProjectSpecificMethods.writeLogIntoTxtFile(ex.getMessage());
+
 //					for (int j = 0; j <= totalColCount; j++) {
 //						switch (j) {
 //						case 0:

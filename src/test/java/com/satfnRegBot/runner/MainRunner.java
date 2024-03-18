@@ -19,6 +19,10 @@ import javax.swing.border.EmptyBorder;
 
 import org.testng.TestListenerAdapter;
 import org.testng.TestNG;
+
+import com.satfnRegBot.pageActions.ProjectSpecificMethods;
+import com.satfnRegBot.testBase.FilePaths;
+
 import javax.swing.JPasswordField;
 
 public class MainRunner extends JFrame {
@@ -30,6 +34,7 @@ public class MainRunner extends JFrame {
 	public static String actualPassword;
 	protected static String configPath;
 	protected static String actualUserPIN;
+	protected static String processLogsPath;
 
 	public static TestNG testNG;
 	public static TestListenerAdapter tla;
@@ -98,7 +103,7 @@ public class MainRunner extends JFrame {
 				if (actualUserId != null && actualUserId != "") {
 					if (actualPassword != null && actualPassword != "") {
 						
-						
+						processLogsPath=FilePaths.PROCESS_LOGFILE+ProjectSpecificMethods.getProcessLogFilenameWithMinutes();
 						tla = new TestListenerAdapter();
 						testNG = new TestNG();
 						// path of the XML file

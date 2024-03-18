@@ -23,6 +23,7 @@ public class FilePaths {
 	public static final String AUTOIT_CLICKSIGN = AUTOIT_HOME+"clickSign.exe";
 	public static final String AUTOIT_ENTERPIN = AUTOIT_HOME+"enterPIN.exe";
 	public static final String TESSDATA_HOME = USER_HOME+"tessdata"+File.separator;
-	
+	public static final String PROCESS_LOGFILE = USER_HOME+"processLogs"+File.separator;
+	public static final String PROCESS_LOGFILE_DEFAULT = PROCESS_LOGFILE+"defaultLog.txt";
 	
 }

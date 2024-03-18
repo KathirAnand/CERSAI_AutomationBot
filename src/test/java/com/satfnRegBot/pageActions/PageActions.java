@@ -15,8 +15,8 @@ import org.openqa.selenium.NoSuchElementException;
 
 import com.satfnRegBot.testBase.BaseClass;
 
-public class PageActions extends BaseClass{
-	
+public class PageActions extends BaseClass {
+
 	/**
 	 * 
 	 */
@@ -25,29 +25,28 @@ public class PageActions extends BaseClass{
 	public static Actions action;
 	private String text = "";
 	private boolean status;
+
+	
 	/**
 	 * 
 	 * @param element
 	 */
 	protected void clickElement(WebElement element) {
 		try {
-			
+
 			element.click();
-		}
-		catch(ElementClickInterceptedException ex)
-		{
-			JavascriptExecutor js = (JavascriptExecutor)driver;
+		} catch (ElementClickInterceptedException ex) {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click();", element);
 //			ex.printStackTrace();
-		}
-		catch(NoSuchElementException ex)
-		{
+		} catch (NoSuchElementException ex) {
 			logger.info("WebElement could not be able to find in the webpage");
 			ex.printStackTrace();
 			throw new RuntimeException();
-			
+
 		}
 	}
+
 	/**
 	 * @param element
 	 * 
@@ -55,74 +54,69 @@ public class PageActions extends BaseClass{
 	public void switchToFrame(WebElement element) {
 		try {
 			driver.switchTo().frame(element);
-		}
-		catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			throw new RuntimeException();
 		}
-		
+
 	}
-	
-	
+
 	public void switchToFrameByIndex(int index) {
 		try {
 //			List<WebElement> f = driver.findElements(By.tagName("iframe"));
 //		    System.out.println("Total number " + f.size());
 			driver.switchTo().frame(index);
-		}
-		catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			throw new RuntimeException();
 		}
 	}
-	
+
 	public void switchToParentFrame() {
 		try {
 			driver.switchTo().parentFrame();
-		}
-		catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			throw new RuntimeException();
 		}
 	}
+
 	protected void waitAndClick(WebElement element) {
 		try {
-			wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+			wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 			element.click();
-		}
-		catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			throw new RuntimeException();
 		}
 	}
-	
+
 	protected void visibleAndClick(WebElement element) {
 		try {
-			wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+			wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.visibilityOf(element));
 			element.click();
-		}
-		catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			throw new RuntimeException();
 		}
 	}
+
 	protected void waitAndJsClick(WebElement element) {
 		try {
-			wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+			wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
-			JavascriptExecutor js = (JavascriptExecutor)driver;
+			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click();", element);
-		}
-		catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			throw new RuntimeException();
 		}
 	}
-	
+
 	protected void actionClick(WebElement ele) {
-		
+
 		try {
 			wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.elementToBeClickable(ele));
@@ -134,8 +128,8 @@ public class PageActions extends BaseClass{
 			throw new RuntimeException();
 		}
 	}
-	
-	protected void moveAndClick(WebElement parentEle,WebElement childEle) {
+
+	protected void moveAndClick(WebElement parentEle, WebElement childEle) {
 		try {
 			wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.visibilityOf(parentEle));
@@ -147,7 +141,7 @@ public class PageActions extends BaseClass{
 			throw new RuntimeException();
 		}
 	}
-	
+
 	/**
 	 * 
 	 * @param element
@@ -157,109 +151,109 @@ public class PageActions extends BaseClass{
 		try {
 			element.clear();
 			element.sendKeys(value);
-		}
-		catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-		
+
 	}
-	
-	protected void jsSendkey(WebElement ele,String value) {
+
+	protected void jsSendkey(WebElement ele, String value) {
 		try {
-			JavascriptExecutor js = (JavascriptExecutor)driver;
-			js.executeScript("arguments[0].setAttribute('value', '" + value +"')", ele);
-		}catch(NoSuchElementException ex) {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].setAttribute('value', '" + value + "')", ele);
+		} catch (NoSuchElementException ex) {
 			Assert.fail();
 			ex.printStackTrace();
 		}
 	}
+
 	protected void clearAndType(WebElement element, int value) {
 		try {
 			element.clear();
 			element.sendKeys(Integer.toString(value));
-		}
-		catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	}
-	
-	protected void scrollAndType(WebElement element,String value) {
+
+	protected void scrollAndType(WebElement element, String value) {
 		try {
 			action = new Actions(driver);
 			action.moveToElement(element).build().perform();
 			element.clear();
 			element.sendKeys(value);
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			throw new RuntimeException();
 		}
-		
+
 	}
-	
-	protected boolean isDisplayedInUI(WebElement element){
+
+	protected boolean isDisplayedInUI(WebElement element) {
 		return element.isDisplayed();
 	}
 
 	protected boolean validationIsDisplayed(WebElement element) {
 		try {
 			return element.isDisplayed();
-		}
-		catch(NoSuchElementException ex) {
+		} catch (NoSuchElementException ex) {
 			return false;
 		}
 	}
+
 	protected boolean isSelected(WebElement element) {
 		status = element.isSelected();
 		return status;
 	}
-	
+
 	protected void findAndClick(List<WebElement> elements, String value) {
 		String text;
-		for(WebElement element:elements) {
+		for (WebElement element : elements) {
 			text = element.getText();
-			if(text.equals(value)) {
+			if (text.equals(value)) {
 				element.click();
 //				logger.info(value + " is clicked");
 				break;
 			}
 		}
 	}
-	
+
 	protected void selectByValue(WebElement element, String value) {
 		Select dropdown = new Select(element);
 		dropdown.selectByValue(value);
 	}
-	
+
 	protected void selectByIndex(WebElement element, int index) {
 		Select dropdown = new Select(element);
 		dropdown.selectByIndex(index);
 	}
-	
+
 	protected String getTextOfElement(WebElement element) {
-		wait  = new WebDriverWait(driver,Duration.ofSeconds(40));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 		wait.until(ExpectedConditions.visibilityOf(element));
 		return element.getText();
 	}
-	
+
 	protected void scrollByaction(WebElement element) {
 		action = new Actions(driver);
 		action.moveToElement(element).build().perform();
 	}
-	
+
 	protected void scrollToElebyJS(WebElement element) {
-		JavascriptExecutor js = (JavascriptExecutor)driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 	}
-	
-	protected void sendKeysUseKeyboard(WebElement element,String value) {
+
+	protected void sendKeysUseKeyboard(WebElement element, String value) {
 		element.sendKeys(value);
 	}
+
 	public String getText() {
 		return text;
 	}
+
 	public void setText(String text) {
 		this.text = text;
 	}
-	
-	
+
 }

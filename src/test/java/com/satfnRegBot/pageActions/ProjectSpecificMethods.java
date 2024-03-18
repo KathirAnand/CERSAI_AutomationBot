@@ -15,7 +15,9 @@ import org.openqa.selenium.OutputType;
 
 import org.apache.commons.io.FileUtils;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 
@@ -40,6 +42,10 @@ public class ProjectSpecificMethods extends BaseClass {
 
 	public static String getCaptchaNameWithMinutes() {
 		return "captcha" + getDatestampWithMinutes() + ".png";
+	}
+
+	public static String getProcessLogFilenameWithMinutes() {
+		return "processLog" + getDatestampWithMinutes() + ".txt";
 	}
 
 	public static String captureScreen(String tname) throws IOException {
@@ -71,5 +77,36 @@ public class ProjectSpecificMethods extends BaseClass {
 		image.setDatapath(FilePaths.TESSDATA_HOME);
 		image.setLanguage("eng");
 		return image.doOCR(new File(path));
+	}
+
+	public static void writeLogIntoTxtFile(String data) throws IOException {
+		try {
+			if (processLogsPath != null) {
+				File file = new File(processLogsPath);
+				FileWriter writer = new FileWriter(processLogsPath, true);
+				BufferedWriter bf = new BufferedWriter(writer);
+				if (file.exists()) {
+					bf.write(data + "\r\n");
+					bf.close();
+				} else if (file.createNewFile()) {
+					bf.write(data + "\r\n");
+					bf.close();
+				}
+			} else {
+				File file = new File(FilePaths.PROCESS_LOGFILE_DEFAULT);
+				FileWriter writer = new FileWriter(FilePaths.PROCESS_LOGFILE_DEFAULT, true);
+				BufferedWriter bf = new BufferedWriter(writer);
+				if (file.exists()) {
+					bf.write(data + "\r\n");
+					bf.close();
+				} else if (file.createNewFile()) {
+					bf.write(data + "\r\n");
+					bf.close();
+				}
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
