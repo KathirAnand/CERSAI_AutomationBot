@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.satfnRegBot.automationScripts.SecurityInterestRegistration">
+        <methods>
+          <include name="setPropertiesAndLogger"/>
+          <include name="launchBrowser"/>
+          <include name="satisfactionPage"/>
+          <include name="tearDown"/>
+          <include name="securityInterestRegistration"/>
+          <include name="loginAsUser"/>
+        </methods>
+      </class> <!-- com.satfnRegBot.automationScripts.SecurityInterestRegistration -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
