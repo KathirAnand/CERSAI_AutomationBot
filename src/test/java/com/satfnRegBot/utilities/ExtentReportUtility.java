@@ -3,6 +3,11 @@ package com.satfnRegBot.utilities;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+//import java.net.URL;
+
+//import org.apache.commons.mail.DefaultAuthenticator;
+//import org.apache.commons.mail.ImageHtmlEmail;
+//import org.apache.commons.mail.resolver.DataSourceUrlResolver;
 
 import com.aventstack.extentreports.ExtentReports;
 //import com.aventstack.extentreports.ExtentTest;
@@ -80,25 +85,25 @@ public class ExtentReportUtility extends BaseClass implements ITestListener{
 	public void onFinish(ITestContext testContext) {
 		extent.flush();
 
-		/*
-		 * try { URL url = new
-		 * URL("file:///"+System.getProperty("user.dir")+"\\reports\\"+repName);
-		 * 
-		 * // Create the email message 
-		 * ImageHtmlEmail email = new ImageHtmlEmail();
-		 * email.setDataSourceResolver(new DataSourceUrlResolver(url));
-		 * email.setHostName("smtp.googlemail.com"); 
-		 * email.setSmtpPort(465);
-		 * email.setAuthenticator(new DefaultAuthenticator("pavanoltraining@gmail.com","password")); 
-		 * email.setSSLOnConnect(true);
-		 * email.setFrom("pavanoltraining@gmail.com"); //Sender
-		 * email.setSubject("Test Results");
-		 * email.setMsg("Please find Attached Report....");
-		 * email.addTo("pavankumar.busyqa@gmail.com"); //Receiver 
-		 * email.attach(url, "extent report", "please check report..."); 
-		 * email.send(); // send the email 
-		 * }
-		 * catch(Exception e) { e.printStackTrace(); }
-		 */
+		
+//		 try { URL url = new
+//		 URL(System.getProperty("user.dir")+"\\test-output\\emailable-report.html");
+//		 
+//		 // Create the email message 
+//		 ImageHtmlEmail email = new ImageHtmlEmail();
+//		 email.setDataSourceResolver(new DataSourceUrlResolver(url));
+//		 email.setHostName("smtp.googlemail.com"); 
+//		 email.setSmtpPort(465);
+//		 email.setAuthenticator(new DefaultAuthenticator("kathirstuvad434dear@gmail.com","!Daredewin@123")); 
+//		 email.setSSLOnConnect(true);
+//		 email.setFrom("kathirstuvad434dear@gmail.com"); //Sender
+//		 email.setSubject("Test Results");
+//		 email.setMsg("Please find Attached Report....");
+//		 email.addTo("ssuryap75@gmail.com"); //Receiver 
+//		 email.attach(url, "extent report", "please check report..."); 
+//		 email.send(); // send the email 
+//		  }
+//		 catch(Exception e) { e.printStackTrace(); }
+//		 
 	}
 }

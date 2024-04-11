@@ -2,10 +2,13 @@ package com.satfnRegBot.testBase;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 //import java.io.IOException;
 import java.time.Duration;
 //import java.util.ResourceBundle;
 import java.util.Properties;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,6 +25,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.satfnRegBot.pageActions.ProjectSpecificMethods;
 import com.satfnRegBot.runner.MainRunner;
+//import com.satfnRegBot.utilities.EmailUtility;
+import com.satfnRegBot.utilities.EmailUtility;
 
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
@@ -29,14 +34,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class BaseClass extends MainRunner{
+public class BaseClass extends MainRunner {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	protected static RemoteWebDriver driver;
-	protected final static String excelWritePath=FilePaths.USER_HOME + ProjectSpecificMethods.getExcelNameForWrite();
+	protected final static String excelWritePath = FilePaths.USER_HOME + ProjectSpecificMethods.getExcelNameForWrite();
 //	public static ResourceBundle rb;
 	public static Logger logger;
 	public ExtentSparkReporter sparkReporter;
@@ -47,34 +52,35 @@ public class BaseClass extends MainRunner{
 
 	/**
 	 * Properties file and Logger is initialized at before suite
-	 * @throws Exception 
+	 * 
+	 * @throws Exception
 	 */
 	@BeforeSuite
 	public void setPropertiesAndLogger() throws Exception {
 		try {
-			if(configPath!=null) {
+			if (configPath != null) {
 				propertiesFilePath = configPath;
 				props = new Properties();
 				FileInputStream ip = new FileInputStream(propertiesFilePath);
 				props.load(ip);
-			}else {
+			} else {
 				props = new Properties();
-				propertiesFilePath = FilePaths.USER_HOME+"config.properties";
+				propertiesFilePath = FilePaths.PROPERTIES_HOME + "config.properties";
 				FileInputStream ip = new FileInputStream(propertiesFilePath);
 				props.load(ip);
 			}
 //			rb = ResourceBundle.getBundle("config"); // to get the properties file
 			logger = LogManager.getLogger(this.getClass()); // to initiate the logger
-		}catch(FileNotFoundException e) {
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			propertiesFilePath = FilePaths.USER_HOME+"config.properties";
+			propertiesFilePath = FilePaths.PROPERTIES_HOME + "config.properties";
 			props = new Properties();
 			FileInputStream ip = new FileInputStream(propertiesFilePath);
 			props.load(ip);
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-		
+
 	}
 
 	/**
@@ -82,14 +88,17 @@ public class BaseClass extends MainRunner{
 	 */
 	@BeforeTest
 	public void launchBrowser() {
-		String browser =props.getProperty("BROWSER");
+		String browser = props.getProperty("BROWSER");
 		if (browser.equalsIgnoreCase("chrome")) {
 
 			// to ignore the Chrome message as "Chrome is controlled by selenium"
 			ChromeOptions opt = new ChromeOptions();
 			opt.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
-			opt.setExperimentalOption("credentials_enable_service", false);
-			opt.setExperimentalOption("profile.password_manager_enabled", false);
+			opt.addArguments("--disable-notifications");
+			Map<String, Object> prefs = new HashMap<String, Object>();
+			prefs.put("credentials_enable_service", false);
+			prefs.put("password_manager_enabled", false);
+			opt.setExperimentalOption("prefs", prefs);
 			opt.addArguments("--remote-allow-origins=*");
 			driver = new ChromeDriver(opt);
 //			Reporter.log("Chrome browser opened",true);
@@ -114,9 +123,14 @@ public class BaseClass extends MainRunner{
 
 	/**
 	 * After the test completed it will close the all the browser instance
+	 * 
+	 * @throws IOException
 	 */
 	@AfterTest
-	public void tearDown() {
+	public void tearDown() throws IOException {
 		driver.close();
+		EmailUtility email = new EmailUtility();
+		email.sendEmail();
+
 	}
 }

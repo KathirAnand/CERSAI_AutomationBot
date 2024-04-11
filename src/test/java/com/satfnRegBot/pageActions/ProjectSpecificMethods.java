@@ -1,6 +1,8 @@
 package com.satfnRegBot.pageActions;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.lang.Math;
 
 import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract;
@@ -19,6 +21,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class ProjectSpecificMethods extends BaseClass {
@@ -45,7 +48,7 @@ public class ProjectSpecificMethods extends BaseClass {
 	}
 
 	public static String getProcessLogFilenameWithMinutes() {
-		return "processLog" + getDatestampWithMinutes() + ".txt";
+		return "processLog_" + getDatestampWithMinutes() + ".txt";
 	}
 
 	public static String captureScreen(String tname) throws IOException {
@@ -105,6 +108,27 @@ public class ProjectSpecificMethods extends BaseClass {
 				}
 			}
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static boolean daysCount(String date) throws ParseException {
+		SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+		Date startDate = format.parse(date); 
+		
+		Date endDate=format.parse(format.format(Calendar.getInstance().getTime()));
+		
+		int diff = (int)startDate.getTime() - (int)endDate.getTime();
+		int diffDays = Math.abs(diff / (24 * 60 * 60 * 1000));
+		System.out.println(diffDays);
+		return true;
+	}
+	
+	public static void main(String[] args) {
+		try {
+			daysCount("03/04/2024");
+		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -33,13 +34,16 @@ public class PageActions extends BaseClass {
 	 */
 	protected void clickElement(WebElement element) {
 		try {
-
 			element.click();
 		} catch (ElementClickInterceptedException ex) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click();", element);
 //			ex.printStackTrace();
-		} catch (NoSuchElementException ex) {
+		}catch(ElementNotInteractableException ex) {
+			wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+			element.click();
+		}catch (NoSuchElementException ex) {
 			logger.info("WebElement could not be able to find in the webpage");
 			ex.printStackTrace();
 			throw new RuntimeException();
@@ -114,7 +118,19 @@ public class PageActions extends BaseClass {
 			throw new RuntimeException();
 		}
 	}
-
+	
+	protected void scrollAndJsClick(WebElement element) {
+		try {
+			wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", element);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			throw new RuntimeException();
+		}
+	}
+	
 	protected void actionClick(WebElement ele) {
 
 		try {

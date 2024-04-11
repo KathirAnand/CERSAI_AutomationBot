@@ -5,6 +5,11 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
 //import java.util.ArrayList;
 //import java.util.List;
 import javax.swing.ImageIcon;
@@ -24,6 +29,7 @@ import com.satfnRegBot.pageActions.ProjectSpecificMethods;
 import com.satfnRegBot.testBase.FilePaths;
 
 import javax.swing.JPasswordField;
+import javax.swing.JCheckBox;
 
 public class MainRunner extends JFrame {
 
@@ -35,6 +41,8 @@ public class MainRunner extends JFrame {
 	protected static String configPath;
 	protected static String actualUserPIN;
 	protected static String processLogsPath;
+	protected Properties emailProps;
+	protected Properties propsForLogID;
 
 	public static TestNG testNG;
 	public static TestListenerAdapter tla;
@@ -47,6 +55,7 @@ public class MainRunner extends JFrame {
 	private JButton select_config;
 	private JPasswordField password_inputField;
 	private JTextField userPIN_inputField;
+	private JCheckBox showPassword_checkbox;
 
 	/**
 	 * Launch the application.
@@ -66,10 +75,31 @@ public class MainRunner extends JFrame {
 		});
 	}
 
+	public void intializeProperties() throws IOException {
+		propsForLogID = new Properties();
+		FileInputStream ip;
+		try {
+			ip = new FileInputStream(FilePaths.PROPERTIES_HOME + "config.properties");
+			propsForLogID.load(ip);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
 	/**
 	 * Create the frame.
 	 */
 	public MainRunner() {
+
+		try {
+			intializeProperties();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		setTitle("Automation InvBot");
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -85,12 +115,13 @@ public class MainRunner extends JFrame {
 		contentPane.add(userId_label);
 
 		userID = new JTextField();
+		userID.setText(propsForLogID.getProperty("LOGIN_ID"));
 		userId_label.setLabelFor(userID);
 		userID.setBounds(103, 53, 230, 20);
 		contentPane.add(userID);
 		userID.setColumns(10);
 
-		JLabel password_label = new JLabel("password");
+		JLabel password_label = new JLabel("Password");
 		password_label.setBounds(10, 91, 83, 14);
 		contentPane.add(password_label);
 
@@ -102,8 +133,9 @@ public class MainRunner extends JFrame {
 				actualUserPIN = userPIN_inputField.getText();
 				if (actualUserId != null && actualUserId != "") {
 					if (actualPassword != null && actualPassword != "") {
-						
-						processLogsPath=FilePaths.PROCESS_LOGFILE+ProjectSpecificMethods.getProcessLogFilenameWithMinutes();
+
+						processLogsPath = FilePaths.PROCESS_LOGFILE
+								+ ProjectSpecificMethods.getProcessLogFilenameWithMinutes();
 						tla = new TestListenerAdapter();
 						testNG = new TestNG();
 						// path of the XML file
@@ -114,7 +146,8 @@ public class MainRunner extends JFrame {
 //						suiteXMLs.add(path);
 //						testNG.setTestSuites(suiteXMLs);
 
-						testNG.setTestClasses(new Class[] { com.satfnRegBot.automationScripts.SatisfactionRegisteration.class });
+						testNG.setTestClasses(
+								new Class[] { com.satfnRegBot.automationScripts.SatisfactionRegisteration.class });
 						testNG.run();
 					} else {
 						message.setText("Please enter Password");
@@ -142,7 +175,7 @@ public class MainRunner extends JFrame {
 				}
 			}
 		});
-		selectFileBtn.setBounds(10, 177, 108, 23);
+		selectFileBtn.setBounds(10, 187, 108, 23);
 		contentPane.add(selectFileBtn);
 
 		selectedFilePath = new JLabel("");
@@ -167,24 +200,38 @@ public class MainRunner extends JFrame {
 				}
 			}
 		});
-		select_config.setBounds(208, 177, 108, 23);
+		select_config.setBounds(208, 187, 108, 23);
 		contentPane.add(select_config);
-		
+
 		password_inputField = new JPasswordField();
+		password_inputField.setText(propsForLogID.getProperty("PASSWORD"));
 		password_label.setLabelFor(password_inputField);
 		password_inputField.setBounds(103, 88, 230, 20);
 		contentPane.add(password_inputField);
-		
+
 		JLabel userPIN_label = new JLabel("User PIN");
-		userPIN_label.setBounds(10, 135, 83, 14);
+		userPIN_label.setBounds(10, 148, 83, 14);
 		contentPane.add(userPIN_label);
-		
+
 		userPIN_inputField = new JTextField();
 		userPIN_inputField.setText("ccc12345");
 		userPIN_label.setLabelFor(userPIN_inputField);
 		userPIN_inputField.setColumns(10);
-		userPIN_inputField.setBounds(103, 132, 230, 20);
+		userPIN_inputField.setBounds(103, 148, 230, 20);
 		contentPane.add(userPIN_inputField);
+
+		showPassword_checkbox = new JCheckBox("Show Password");
+		showPassword_checkbox.setBounds(103, 115, 129, 23);
+		contentPane.add(showPassword_checkbox);
+		showPassword_checkbox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (showPassword_checkbox.isSelected()) {
+					password_inputField.setEchoChar((char) 0);
+				} else {
+					password_inputField.setEchoChar('*');
+				}
+			}
+		});
 
 	}
 }

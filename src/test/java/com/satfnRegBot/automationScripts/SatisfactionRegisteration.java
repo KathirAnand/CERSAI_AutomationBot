@@ -38,29 +38,35 @@ public class SatisfactionRegisteration extends BaseClass {
 	 */
 	@BeforeClass
 	public void loginAsUser() throws InterruptedException {
-		HomePage homePage = new HomePage(driver);
-		homePage.clickLoginButton();
-		Reporter.log("Login button clicked");
-		Thread.sleep(1000);
-		LoginPage loginPage = new LoginPage(driver);
-		System.out.println(actualUserId);
-		System.out.println(actualPassword);
-		if (actualUserId == null && actualPassword == null) {
-			actualUserId = props.getProperty("LOGIN_ID");
-			actualPassword = props.getProperty("PASSWORD");
-		}
-		loginPage.setLoginID(actualUserId);
-		loginPage.setPassword(actualPassword);
-		loginPage.setCaptcha();
-		Thread.sleep(10000);
-		loginPage.clickSubmitButton();
-		while (loginPage.invalidCaptchaMsg()) {
-			loginPage.clickGoToHomeLink();
+		try {
+			HomePage homePage = new HomePage(driver);
 			homePage.clickLoginButton();
+			Reporter.log("Login button clicked");
+			Thread.sleep(1000);
+			LoginPage loginPage = new LoginPage(driver);
+			System.out.println(actualUserId);
+			System.out.println(actualPassword);
+			if (actualUserId == null && actualPassword == null) {
+				actualUserId = props.getProperty("LOGIN_ID");
+				actualPassword = props.getProperty("PASSWORD");
+			}
 			loginPage.setLoginID(actualUserId);
 			loginPage.setPassword(actualPassword);
 			loginPage.setCaptcha();
+			Thread.sleep(10000);
 			loginPage.clickSubmitButton();
+			while (loginPage.invalidCaptchaMsg()) {
+				loginPage.clickGoToHomeLink();
+				homePage.clickLoginButton();
+				loginPage.setLoginID(actualUserId);
+				loginPage.setPassword(actualPassword);
+				loginPage.setCaptcha();
+				Thread.sleep(2000);
+				loginPage.clickSubmitButton();
+			}
+		} catch (Exception e) {
+			Thread.sleep(10000);
+			e.printStackTrace();
 		}
 	}
 
@@ -72,28 +78,33 @@ public class SatisfactionRegisteration extends BaseClass {
 	 */
 	@BeforeMethod
 	public void invokeDigitalSignature() throws InterruptedException, IOException {
-		DigitalSignPage sign = new DigitalSignPage(driver);
-		sign.clickInvokeDigitalSignButton();
-		Thread.sleep(3000);
-
-		Runtime.getRuntime().exec(FilePaths.AUTOIT_CLICKSIGN);
-		Thread.sleep(3000);
 		try {
-			if (actualUserPIN == null) {
-				sign.enterUserPIN(props.getProperty("USER_PIN"));
-			} else {
-				sign.enterUserPIN(actualUserPIN);
-			}
-			Thread.sleep(2000);
-			sign.clickLoginUsingKeyboard();
+			DigitalSignPage sign = new DigitalSignPage(driver);
+			Thread.sleep(3000);
+			sign.clickInvokeDigitalSignButton();
 			Thread.sleep(1000);
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
 
-		UserHomePage userHome = new UserHomePage(driver);
-		userHome.clickHamburgerIcon();
-		userHome.clickSatisfaction();
+			Runtime.getRuntime().exec(FilePaths.AUTOIT_CLICKSIGN);
+			Thread.sleep(3000);
+			try {
+				if (actualUserPIN == null) {
+					sign.enterUserPIN(props.getProperty("USER_PIN"));
+				} else {
+					sign.enterUserPIN(actualUserPIN);
+				}
+				Thread.sleep(2000);
+				sign.clickLoginUsingKeyboard();
+				Thread.sleep(1000);
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+
+			UserHomePage userHome = new UserHomePage(driver);
+			userHome.clickHamburgerIcon();
+			userHome.clickSatisfaction();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -101,7 +112,7 @@ public class SatisfactionRegisteration extends BaseClass {
 	 * 
 	 * @throws Exception
 	 */
-	@Test(priority = 2)
+	@Test
 	public void satisfactionRegister() throws Exception {
 		String SIId = "";
 		String sheetName = "Sheet1";
@@ -148,12 +159,13 @@ public class SatisfactionRegisteration extends BaseClass {
 					if (SIId != null && SIId != "") {
 
 						if (!ProjectSpecificMethods.lengthValidation(SIId)) {
-							
+
 							read.setCellData(sheetName, dataRowNo, totalColCount, props.getProperty("LENGTH_ERR_MSG"));
 							Reporter.log(SIId + " is not in 12 digits. SI ID must be in 12 digits");
 							logger.info(SIId + " is not in 12 digits. SI ID must be in 12 digits");
-							ProjectSpecificMethods.writeLogIntoTxtFile(SIId + " is not in 12 digits. SI ID must be in 12 digits");
-							
+							ProjectSpecificMethods
+									.writeLogIntoTxtFile(SIId + " is not in 12 digits. SI ID must be in 12 digits");
+
 //							for (int j = 0; j <= totalColCount; j++) {
 //								switch (j) {
 //								case 0:
@@ -174,12 +186,12 @@ public class SatisfactionRegisteration extends BaseClass {
 						satfnPage.clickProceedButton();
 						if (satfnPage.errorMsgIsDisplayed()) {
 							satfnPage.clickCloseButtonInErrorMsg();
-							
+
 							read.setCellData(sheetName, dataRowNo, totalColCount, props.getProperty("SATISFIED"));
 							Reporter.log(SIId + " is already satisfied");
 							logger.info(SIId + " is already satisfied");
 							ProjectSpecificMethods.writeLogIntoTxtFile(SIId + " is already satisfied");
-							
+
 //							for (int j = 0; j <= totalColCount; j++) {
 //								switch (j) {
 //								case 0:
@@ -216,8 +228,9 @@ public class SatisfactionRegisteration extends BaseClass {
 						logger.info(SIId + " is satisfied with the Transaction ID " + transID);
 						// Enters the transaction ID into the Excel sheet
 						read.setCellData(sheetName, dataRowNo, totalColCount, transID);
-						ProjectSpecificMethods.writeLogIntoTxtFile(SIId + " is satisfied with the Transaction ID " + transID);
-						
+						ProjectSpecificMethods
+								.writeLogIntoTxtFile(SIId + " is satisfied with the Transaction ID " + transID);
+
 //						for (int j = 0; j <= totalColCount; j++) {
 //							switch (j) {
 //							case 0:
@@ -234,12 +247,12 @@ public class SatisfactionRegisteration extends BaseClass {
 						successPage.clickBackButton();
 
 					} else if (SIId == null || SIId == "") {
-						
+
 						read.setCellData(sheetName, dataRowNo, totalColCount, props.getProperty("EMPTYMSG"));
 						Reporter.log("Security Interest ID is Not valid or empty");
 						logger.info("Security Interest ID is Not valid or empty");
 						ProjectSpecificMethods.writeLogIntoTxtFile("Security Interest ID is Not valid or empty");
-						
+
 //						for (int j = 0; j <= totalColCount; j++) {
 //							switch (j) {
 //							case 0:
@@ -257,7 +270,7 @@ public class SatisfactionRegisteration extends BaseClass {
 					}
 				} catch (Exception ex) {
 					ex.printStackTrace();
-					
+
 					read.setCellData(sheetName, dataRowNo, totalColCount, props.getProperty("UNHANDLED_ERR_MSG"));
 					Reporter.log("Unhandled error message");
 					ProjectSpecificMethods.writeLogIntoTxtFile(ex.getMessage());
@@ -275,7 +288,7 @@ public class SatisfactionRegisteration extends BaseClass {
 //							break;
 //						}
 //					}
-					
+
 					driver.navigate().refresh();
 					UserHomePage userHome = new UserHomePage(driver);
 					userHome.clickHamburgerIcon();
@@ -286,6 +299,7 @@ public class SatisfactionRegisteration extends BaseClass {
 			}
 
 		}
+
 	}
 
 }
