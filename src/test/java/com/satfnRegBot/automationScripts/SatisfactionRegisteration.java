@@ -76,6 +76,7 @@ public class SatisfactionRegisteration extends BaseClass {
 	 * @throws InterruptedException
 	 * @throws IOException
 	 */
+	@SuppressWarnings("deprecation")
 	@BeforeMethod
 	public void invokeDigitalSignature() throws InterruptedException, IOException {
 		try {
@@ -92,7 +93,7 @@ public class SatisfactionRegisteration extends BaseClass {
 				} else {
 					sign.enterUserPIN(actualUserPIN);
 				}
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 				sign.clickLoginUsingKeyboard();
 				Thread.sleep(1000);
 			} catch (Exception ex) {
@@ -183,7 +184,9 @@ public class SatisfactionRegisteration extends BaseClass {
 						}
 						SatisfactionPage satfnPage = new SatisfactionPage(driver);
 						satfnPage.setSecurityInterestID(SIId);
+
 						satfnPage.clickProceedButton();
+
 						if (satfnPage.errorMsgIsDisplayed()) {
 							satfnPage.clickCloseButtonInErrorMsg();
 
@@ -214,9 +217,12 @@ public class SatisfactionRegisteration extends BaseClass {
 //						Thread.sleep(1000);
 
 						detailsPage.selectReasonUseKeyboard();
+						
 
-						if (detailsPage.reasonForDelayIsDisplayed()) {
-							detailsPage.setReason(props.getProperty("REASON"));
+						if (ProjectSpecificMethods.daysCount(closedDate) >=29) {
+							if (detailsPage.reasonForDelayIsDisplayed()) {
+								detailsPage.setReason(props.getProperty("REASON"));
+							}
 						}
 
 						detailsPage.clickSubmitButton();
@@ -290,6 +296,7 @@ public class SatisfactionRegisteration extends BaseClass {
 //					}
 
 					driver.navigate().refresh();
+					Thread.sleep(2000);
 					UserHomePage userHome = new UserHomePage(driver);
 					userHome.clickHamburgerIcon();
 					userHome.clickSatisfaction();

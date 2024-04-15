@@ -66,7 +66,7 @@ public class MainRunner extends JFrame {
 				try {
 					MainRunner frame = new MainRunner();
 					frame.setVisible(true);
-					ImageIcon imgicon = new ImageIcon("D:\\Veritas\\SatfnReg.InvBot\\icon\\InvBotFavIcon.png");
+					ImageIcon imgicon = new ImageIcon(FilePaths.BOT_FAVICON);
 					frame.setIconImage(imgicon.getImage());
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -92,7 +92,6 @@ public class MainRunner extends JFrame {
 	 * Create the frame.
 	 */
 	public MainRunner() {
-
 		try {
 			intializeProperties();
 		} catch (IOException e) {
@@ -101,7 +100,7 @@ public class MainRunner extends JFrame {
 		}
 
 		setTitle("Automation InvBot");
-
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 350);
 		contentPane = new JPanel();

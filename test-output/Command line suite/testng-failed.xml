@@ -6,8 +6,8 @@
       <class name="com.satfnRegBot.automationScripts.SatisfactionRegisteration">
         <methods>
           <include name="setPropertiesAndLogger"/>
-          <include name="launchBrowser"/>
           <include name="invokeDigitalSignature"/>
+          <include name="launchBrowser"/>
           <include name="loginAsUser"/>
           <include name="tearDown"/>
           <include name="satisfactionRegister"/>

@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Build-Jdk-Spec: 17
+Build-Jdk-Spec: 20
 Class-Path: slf4j-api-1.7.36.jar selenium-java-4.12.1.jar selenium-api-4
  .12.1.jar selenium-chrome-driver-4.12.1.jar auto-service-annotations-1.
  1.1.jar guava-32.1.2-jre.jar failureaccess-1.0.1.jar listenablefuture-9

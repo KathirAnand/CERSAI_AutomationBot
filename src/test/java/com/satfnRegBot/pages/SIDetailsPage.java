@@ -74,7 +74,7 @@ public class SIDetailsPage extends BasePage {
 	public void selectReasonUseKeyboard() {
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.TAB);
-		action.sendKeys(Keys.TAB);
+//		action.sendKeys(Keys.TAB);
 		action.sendKeys("l");
 		action.build().perform();
 	}

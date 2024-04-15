@@ -15,6 +15,7 @@ public class FilePaths {
 	public static final String PROPERTIES_HOME=USER_HOME+"propertiesFiles"+File.separator;
 	public final static String PROPERITES_FILEPATH = PROPERTIES_HOME+"config.properties";
 	public final static String BOT_ICON = USER_HOME +"icon"+File.separator+"InvBotIcon.png";
+	public final static String BOT_FAVICON = USER_HOME +"icon"+File.separator+"InvBotFavIcon.png";
 	public final static String DATASOURCE_SI_SATFN_REG = TESTDATA_HOME+"SI_Satisfaction_RegData.xlsx";
 	public static final String REPORT_HOME=USER_HOME+"reports"+File.separator;
 	public static final String EXTENTREPORT_FILE=REPORT_HOME+"test-output\\FailedTestsScreenshots\\";

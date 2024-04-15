@@ -185,3 +185,166 @@
 17:12:33.455 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400063965097 is already satisfied
 17:12:34.457 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400064014774 is already satisfied
 17:12:35.491 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061340725 is already satisfied
+12:58:09.820 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - https://www.cersai.org.in/CERSAI/home.prg URL Opened Successfully in chrome browser
+12:58:51.099 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - WebElement could not be able to find in the webpage
+12:07:13.872 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - https://www.cersai.org.in/CERSAI/home.prg URL Opened Successfully in chrome browser
+12:08:43.185 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - WebElement could not be able to find in the webpage
+12:08:48.374 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060937472 is already satisfied
+12:08:49.223 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060950237 is already satisfied
+12:12:43.281 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - https://www.cersai.org.in/CERSAI/home.prg URL Opened Successfully in chrome browser
+12:13:23.605 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400022990791 is already satisfied
+12:13:24.740 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060937472 is already satisfied
+12:13:25.752 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060950237 is already satisfied
+12:14:59.172 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400070624693 is satisfied with the Transaction ID 200303854666
+12:26:42.800 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - https://www.cersai.org.in/CERSAI/home.prg URL Opened Successfully in chrome browser
+12:27:22.480 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400022990791 is already satisfied
+12:27:23.558 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060937472 is already satisfied
+12:27:24.438 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060950237 is already satisfied
+12:27:25.423 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400070624693 is already satisfied
+12:27:47.114 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060217541 is satisfied with the Transaction ID 200303856745
+12:28:10.050 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400063414230 is satisfied with the Transaction ID 200303856810
+12:28:33.972 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400032877578 is satisfied with the Transaction ID 200303856874
+12:28:56.194 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400072460570 is satisfied with the Transaction ID 200303856931
+12:29:18.172 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400029732940 is satisfied with the Transaction ID 200303856985
+12:29:40.806 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400029784096 is satisfied with the Transaction ID 200303857050
+12:39:00.330 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - https://www.cersai.org.in/CERSAI/home.prg URL Opened Successfully in chrome browser
+12:40:03.970 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400022990791 is already satisfied
+12:40:06.708 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060937472 is already satisfied
+12:40:07.263 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060950237 is already satisfied
+12:40:07.814 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400070624693 is already satisfied
+12:40:08.339 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060217541 is already satisfied
+12:40:08.867 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400063414230 is already satisfied
+12:40:09.401 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400032877578 is already satisfied
+12:40:09.989 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400072460570 is already satisfied
+12:40:10.462 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400029732940 is already satisfied
+12:40:10.972 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400029784096 is already satisfied
+12:40:32.052 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400030428504 is satisfied with the Transaction ID 200303858770
+12:40:53.432 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400069345023 is satisfied with the Transaction ID 200303858824
+12:41:14.917 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400075460286 is satisfied with the Transaction ID 200303858886
+12:41:36.650 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400026926230 is satisfied with the Transaction ID 200303858961
+12:41:58.173 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400037868763 is satisfied with the Transaction ID 200303859031
+12:42:20.054 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400026481334 is satisfied with the Transaction ID 200303859085
+12:42:41.665 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400039590695 is satisfied with the Transaction ID 200303859150
+12:43:03.309 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400071104724 is satisfied with the Transaction ID 200303859190
+12:43:24.752 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061237970 is satisfied with the Transaction ID 200303859247
+12:43:46.068 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060146070 is satisfied with the Transaction ID 200303859304
+12:44:26.676 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400063276765 is satisfied with the Transaction ID 200303859362
+12:44:48.323 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400070050763 is satisfied with the Transaction ID 200303859483
+12:45:09.955 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061048223 is satisfied with the Transaction ID 200303859545
+12:45:31.843 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400032122660 is satisfied with the Transaction ID 200303859601
+12:45:53.577 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061303788 is satisfied with the Transaction ID 200303859662
+12:46:15.138 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060929489 is satisfied with the Transaction ID 200303859724
+12:46:36.640 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400037204343 is satisfied with the Transaction ID 200303859800
+12:46:57.909 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400026169527 is satisfied with the Transaction ID 200303859854
+12:47:19.351 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400024909797 is satisfied with the Transaction ID 200303859928
+12:47:41.266 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400062596872 is satisfied with the Transaction ID 200303859978
+12:48:02.639 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400069887691 is satisfied with the Transaction ID 200303860053
+12:48:24.287 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400023963730 is satisfied with the Transaction ID 200303860107
+12:48:45.752 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400069927827 is satisfied with the Transaction ID 200303860170
+12:49:07.235 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060929225 is satisfied with the Transaction ID 200303860224
+12:49:28.583 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400027331015 is satisfied with the Transaction ID 200303860276
+12:49:49.863 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400063228453 is satisfied with the Transaction ID 200303860333
+12:50:11.490 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400070416135 is satisfied with the Transaction ID 200303860389
+12:50:33.148 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400039201147 is satisfied with the Transaction ID 200303860442
+12:50:54.596 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400028762262 is satisfied with the Transaction ID 200303860506
+12:51:16.349 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400072385447 is satisfied with the Transaction ID 200303860574
+12:51:17.422 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400015458440 is already satisfied
+12:51:38.593 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060934686 is satisfied with the Transaction ID 200303860648
+12:51:59.837 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060978402 is satisfied with the Transaction ID 200303860752
+12:52:21.446 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400038902539 is satisfied with the Transaction ID 200303860843
+12:52:42.774 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060752060 is satisfied with the Transaction ID 200303860903
+12:53:04.377 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400032873768 is satisfied with the Transaction ID 200303860978
+12:53:25.730 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400032847628 is satisfied with the Transaction ID 200303861042
+12:53:47.179 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400039168046 is satisfied with the Transaction ID 200303861107
+12:54:21.081 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400075333999 is satisfied with the Transaction ID 200303861158
+12:54:42.434 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061071939 is satisfied with the Transaction ID 200303861249
+12:55:03.681 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060188263 is satisfied with the Transaction ID 200303861298
+12:55:24.875 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400039682496 is satisfied with the Transaction ID 200303861369
+12:55:46.854 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400029206845 is satisfied with the Transaction ID 200303861451
+12:56:08.267 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400063879556 is satisfied with the Transaction ID 200303861520
+12:56:30.178 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061338777 is satisfied with the Transaction ID 200303861575
+12:56:52.119 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400063443152 is satisfied with the Transaction ID 200303861634
+12:57:13.837 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400069526601 is satisfied with the Transaction ID 200303861691
+12:57:35.434 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400035352832 is satisfied with the Transaction ID 200303861741
+12:57:56.994 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400075477168 is satisfied with the Transaction ID 200303861791
+12:58:18.729 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400039306063 is satisfied with the Transaction ID 200303861851
+12:58:40.665 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400070056590 is satisfied with the Transaction ID 200303861909
+12:59:02.193 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400071848345 is satisfied with the Transaction ID 200303861950
+12:59:24.254 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400073084493 is satisfied with the Transaction ID 200303862013
+12:59:45.816 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400039235354 is satisfied with the Transaction ID 200303862072
+13:00:07.623 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400070361142 is satisfied with the Transaction ID 200303862128
+13:00:29.128 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400062749621 is satisfied with the Transaction ID 200303862182
+13:00:51.390 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400072762650 is satisfied with the Transaction ID 200303862231
+13:01:13.030 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400063594544 is satisfied with the Transaction ID 200303862288
+13:01:35.345 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400024336291 is satisfied with the Transaction ID 200303862334
+13:01:56.921 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400020368527 is satisfied with the Transaction ID 200303862397
+13:02:18.609 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400062580215 is satisfied with the Transaction ID 200303862450
+13:02:40.604 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400064770532 is satisfied with the Transaction ID 200303862498
+13:03:10.641 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061020263 is satisfied with the Transaction ID 200303862583
+13:03:32.277 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400032891919 is satisfied with the Transaction ID 200303862652
+13:03:54.039 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400033040398 is satisfied with the Transaction ID 200303862699
+13:04:18.973 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400076972710 is satisfied with the Transaction ID 200303862752
+13:04:40.878 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400029567603 is satisfied with the Transaction ID 200303862830
+13:05:02.338 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400030265492 is satisfied with the Transaction ID 200303862901
+13:05:24.081 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400067208624 is satisfied with the Transaction ID 200303862971
+13:05:45.638 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400069929941 is satisfied with the Transaction ID 200303863029
+13:06:07.483 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400069785337 is satisfied with the Transaction ID 200303863097
+13:06:29.146 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400063172884 is satisfied with the Transaction ID 200303863167
+13:06:50.801 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400070595115 is satisfied with the Transaction ID 200303863243
+13:07:12.236 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400039477561 is satisfied with the Transaction ID 200303863313
+13:07:34.014 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060959720 is satisfied with the Transaction ID 200303863372
+13:07:56.055 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060971877 is satisfied with the Transaction ID 200303863430
+13:08:17.726 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400029930398 is satisfied with the Transaction ID 200303863501
+13:08:39.697 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400063350481 is satisfied with the Transaction ID 200303863562
+13:09:01.191 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060575736 is satisfied with the Transaction ID 200303863628
+13:09:22.783 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400032918725 is satisfied with the Transaction ID 200303863689
+13:09:44.271 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400032962956 is satisfied with the Transaction ID 200303863756
+13:10:07.448 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400069609549 is satisfied with the Transaction ID 200303863815
+13:10:28.970 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400026381232 is satisfied with the Transaction ID 200303863895
+13:10:51.175 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060993121 is satisfied with the Transaction ID 200303863961
+13:11:14.210 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400062576974 is satisfied with the Transaction ID 200303864025
+13:11:35.968 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400062590361 is satisfied with the Transaction ID 200303864090
+13:11:57.010 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060887035 is satisfied with the Transaction ID 200303864170
+13:12:19.112 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060934181 is satisfied with the Transaction ID 200303864258
+13:12:40.494 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400023679319 is satisfied with the Transaction ID 200303864322
+13:13:02.327 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400037176060 is satisfied with the Transaction ID 200303864401
+13:13:24.702 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061208733 is satisfied with the Transaction ID 200303864477
+13:13:46.557 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061280636 is satisfied with the Transaction ID 200303864534
+13:15:24.233 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400030422577 is satisfied with the Transaction ID 200303864769
+13:15:45.858 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400029766045 is satisfied with the Transaction ID 200303864818
+13:16:07.177 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400032867640 is satisfied with the Transaction ID 200303864868
+13:16:28.901 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400021467238 is satisfied with the Transaction ID 200303864918
+13:16:50.565 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400015923139 is satisfied with the Transaction ID 200303864959
+13:17:12.306 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400028752961 is satisfied with the Transaction ID 200303865020
+13:17:33.800 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400071021356 is satisfied with the Transaction ID 200303865086
+13:17:55.298 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400029937088 is satisfied with the Transaction ID 200303865154
+13:18:16.835 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061193129 is satisfied with the Transaction ID 200303865217
+13:18:38.786 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400070553599 is satisfied with the Transaction ID 200303865294
+13:19:01.403 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400069685002 is satisfied with the Transaction ID 200303865351
+13:19:23.501 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060575453 is satisfied with the Transaction ID 200303865423
+13:19:46.114 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061388987 is satisfied with the Transaction ID 200303865474
+13:20:07.699 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400063291717 is satisfied with the Transaction ID 200303865532
+13:20:28.924 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061278265 is satisfied with the Transaction ID 200303865591
+13:20:50.694 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061049266 is satisfied with the Transaction ID 200303865641
+13:21:13.310 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400070575281 is satisfied with the Transaction ID 200303865694
+13:21:34.820 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400032819600 is satisfied with the Transaction ID 200303865759
+13:21:58.480 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400062059843 is satisfied with the Transaction ID 200303865842
+13:22:20.749 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400075467908 is satisfied with the Transaction ID 200303865897
+13:22:43.328 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400037150069 is satisfied with the Transaction ID 200303865966
+13:23:05.241 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060964737 is satisfied with the Transaction ID 200303866054
+13:23:26.717 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400064020237 is satisfied with the Transaction ID 200303866136
+13:23:48.456 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400069815366 is satisfied with the Transaction ID 200303866206
+13:23:50.089 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400020474024 is already satisfied
+13:24:11.825 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400062585175 is satisfied with the Transaction ID 200303866261
+13:24:34.165 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400073350849 is satisfied with the Transaction ID 200303866327
+13:24:56.622 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400063235452 is satisfied with the Transaction ID 200303866403
+13:25:18.968 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400039057553 is satisfied with the Transaction ID 200303866480
+13:25:40.725 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061691862 is satisfied with the Transaction ID 200303866560
+13:26:02.396 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400066720128 is satisfied with the Transaction ID 200303866633
+13:26:24.480 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400060854055 is satisfied with the Transaction ID 200303866706
+13:26:25.715 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061669636 is already satisfied
+13:26:46.841 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061224858 is satisfied with the Transaction ID 200303866780
+13:27:09.331 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400063918393 is satisfied with the Transaction ID 200303866854
+13:27:31.572 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400070217048 is satisfied with the Transaction ID 200303866923
+13:27:53.128 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061079607 is satisfied with the Transaction ID 200303867003
+13:28:15.067 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400029757561 is satisfied with the Transaction ID 200303867086

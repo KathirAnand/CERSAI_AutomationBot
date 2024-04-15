@@ -113,24 +113,24 @@ public class ProjectSpecificMethods extends BaseClass {
 		}
 	}
 	
-	public static boolean daysCount(String date) throws ParseException {
+	public static long daysCount(String date) throws ParseException {
 		SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
 		Date startDate = format.parse(date); 
 		
 		Date endDate=format.parse(format.format(Calendar.getInstance().getTime()));
 		
-		int diff = (int)startDate.getTime() - (int)endDate.getTime();
-		int diffDays = Math.abs(diff / (24 * 60 * 60 * 1000));
+		long diff = startDate.getTime() - endDate.getTime();
+		long diffDays = Math.abs(diff / 1000 / 60 / 60 / 24);
 		System.out.println(diffDays);
-		return true;
+		return diffDays;
 	}
 	
-	public static void main(String[] args) {
-		try {
-			daysCount("03/04/2024");
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	public static void main(String[] args) {
+//		try {
+//			daysCount("02/02/2024");
+//		} catch (ParseException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 }

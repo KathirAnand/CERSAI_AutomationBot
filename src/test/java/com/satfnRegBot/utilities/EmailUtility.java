@@ -25,7 +25,7 @@ public class EmailUtility extends BaseClass {
 	public void sendEmail() {
 
 		emailProps = new Properties();
-		FileInputStream emailIPStream;
+		FileInputStream emailIPStream = null;
 		try {
 			emailIPStream = new FileInputStream(FilePaths.EMAIL_PROPERTIESPATH);
 			emailProps.load(emailIPStream);
@@ -37,7 +37,7 @@ public class EmailUtility extends BaseClass {
 
 			if (emailProps.getProperty("AUTHENTICATOR") != null
 					&& emailProps.getProperty("AUTHENTICATOR_PASSWORD") != null) {
-				if (emailProps.getProperty("TO") != null) {
+				if (emailProps.getProperty("NO_OF_RECIEVER") != null && Integer.parseInt(emailProps.getProperty("NO_OF_RECIEVER"))>0) {
 //					URL url = new URL(System.getProperty("user.dir") + "\\test-output\\emailable-report.html");
 
 					// Create the email message
@@ -51,7 +51,11 @@ public class EmailUtility extends BaseClass {
 					email.setFrom(emailProps.getProperty("AUTHENTICATOR"));
 					// ashwanthkumar.rk@veritasfin.in
 
-					email.addTo(emailProps.getProperty("TO"));
+					int numberOfReciever=Integer.parseInt(emailProps.getProperty("NO_OF_RECIEVER"));
+					for(int i=1;i<=numberOfReciever;i++) {
+						email.addTo(emailProps.getProperty("TO_RECIEVER_"+i));
+					}
+//					email.addTo(emailProps.getProperty("TO"));
 //					email.addTo("ashwanthkumar.rk@veritasfin.in");
 					
 					if(emailProps.getProperty("SUBJECT")!=null) {
@@ -59,9 +63,10 @@ public class EmailUtility extends BaseClass {
 					}else {
 						email.setSubject("InvBot Automation Report");
 					}
-					email.setMsg("Dear Team,\n"
-							+ "Find the attached Excel containing Satisfied Security Interest along with their Transaction ID \n"
-							+ "\n" + "Thanks,\n" + "Invent Softlabs (India) Pvt Ltd");
+					email.setMsg(emailProps.getProperty("WELCOME")
+							+ emailProps.getProperty("CONTENT")
+							+ "\n" + emailProps.getProperty("THANKS") + emailProps.getProperty("COMP_NAME")
+					       +"\n"+emailProps.getProperty("DISCLAIMER"));
 
 					// Create the attachment for HTML Report
 //					EmailAttachment attachment = new EmailAttachment();
@@ -94,6 +99,7 @@ public class EmailUtility extends BaseClass {
 
 					// send the email
 					email.send();
+					emailIPStream.close();
 				}
 			}
 
@@ -113,6 +119,7 @@ public class EmailUtility extends BaseClass {
 		email.setStartTLSEnabled(true); // or false if using SSL
 		email.setFrom("kathiravana@inventsoftlabs.com");
 		email.addTo("suryaprakashs@inventsoftlabs.com");
+		
 		email.setSubject("Test Email");
 		email.setMsg("InvBot Automation Report");
 		email.setMsg(
@@ -120,6 +127,10 @@ public class EmailUtility extends BaseClass {
 						+ "\n" + "Thanks with best regards \n" + "Invent Softlabs (India) Pvt Ltd");
 		email.send();
 
+	}
+	public static void main(String[] args) {
+		EmailUtility eu = new EmailUtility();
+		eu.sendEmail();
 	}
 
 }
