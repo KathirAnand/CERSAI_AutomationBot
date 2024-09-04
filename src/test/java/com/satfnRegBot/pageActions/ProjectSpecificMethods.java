@@ -114,7 +114,8 @@ public class ProjectSpecificMethods extends BaseClass {
 	}
 	
 	public static long daysCount(String date) throws ParseException {
-		SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+//		SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
 		Date startDate = format.parse(date); 
 		
 		Date endDate=format.parse(format.format(Calendar.getInstance().getTime()));
@@ -127,7 +128,7 @@ public class ProjectSpecificMethods extends BaseClass {
 	
 //	public static void main(String[] args) {
 //		try {
-//			daysCount("02/02/2024");
+//			daysCount("09-08-2024");
 //		} catch (ParseException e) {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();

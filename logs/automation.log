@@ -348,3 +348,16 @@
 13:27:31.572 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400070217048 is satisfied with the Transaction ID 200303866923
 13:27:53.128 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061079607 is satisfied with the Transaction ID 200303867003
 13:28:15.067 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400029757561 is satisfied with the Transaction ID 200303867086
+15:23:57.885 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - https://www.cersai.org.in/CERSAI/home.prg URL Opened Successfully in chrome browser
+15:24:40.542 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061321165 is already satisfied
+15:40:22.232 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - https://www.cersai.org.in/CERSAI/home.prg URL Opened Successfully in chrome browser
+15:41:11.259 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - WebElement could not be able to find in the webpage
+15:41:32.771 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - WebElement could not be able to find in the webpage
+15:45:06.349 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061321224 is satisfied with the Transaction ID 200319624567
+15:57:12.491 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - https://www.cersai.org.in/CERSAI/home.prg URL Opened Successfully in chrome browser
+15:57:57.255 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061321165 is already satisfied
+15:57:58.034 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061321224 is already satisfied
+17:18:02.745 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - https://www.cersai.org.in/CERSAI/home.prg URL Opened Successfully in chrome browser
+17:18:52.223 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061321263 is satisfied with the Transaction ID 200319647889
+17:19:06.653 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061321267 is satisfied with the Transaction ID 200319647937
+17:19:20.947 [AWT-EventQueue-0] INFO  com.satfnRegBot.automationScripts.SatisfactionRegisteration - 400061321283 is satisfied with the Transaction ID 200319647993

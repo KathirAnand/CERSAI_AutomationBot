@@ -1,5 +1,6 @@
 package com.satfnRegBot.automationScripts;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -40,6 +41,7 @@ public class SatisfactionRegisteration extends BaseClass {
 	public void loginAsUser() throws InterruptedException {
 		try {
 			HomePage homePage = new HomePage(driver);
+			homePage.clickCKYCCLoseBtn();
 			homePage.clickLoginButton();
 			Reporter.log("Login button clicked");
 			Thread.sleep(1000);
@@ -214,10 +216,10 @@ public class SatisfactionRegisteration extends BaseClass {
 						SIDetailsPage detailsPage = new SIDetailsPage(driver);
 						detailsPage.setDate(closedDate);
 
-//						Thread.sleep(1000);
-
-						detailsPage.selectReasonUseKeyboard();
-						
+						Thread.sleep(1000);
+//						detailsPage.selectReasonUseKeyboard();
+						detailsPage.selectReason(props.getProperty("REASON"));
+						Thread.sleep(1000);
 
 						if (ProjectSpecificMethods.daysCount(closedDate) >=29) {
 							if (detailsPage.reasonForDelayIsDisplayed()) {
@@ -308,5 +310,11 @@ public class SatisfactionRegisteration extends BaseClass {
 		}
 
 	}
-
+	
+	@AfterClass
+	public void userLogOut() {
+		HomePage homePage = new HomePage(driver);
+		homePage.clickUserProfile();
+		homePage.clickUserLogoutBtn();
+	}
 }

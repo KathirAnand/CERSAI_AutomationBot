@@ -40,7 +40,7 @@ public class SIDetailsPage extends BasePage {
 	protected WebElement reasonInputField;
 	
 	public void selectReason(String reason) {
-		clickElement(reasonDropdown);
+//		clickElement(reasonDropdown);
 		selectByValue(reasonDropdown, reason);
 	}
 	

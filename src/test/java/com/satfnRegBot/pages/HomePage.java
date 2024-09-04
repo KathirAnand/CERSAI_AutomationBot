@@ -18,8 +18,28 @@ public class HomePage extends BasePage{
 	@FindBy(css="a[title='Login for Central Registry']")
 	protected WebElement loginButton;
 	
+	@FindBy(css="#userClass")
+	protected WebElement userProfile;
+	
+	@FindBy(xpath="//a[text()='Logout']")
+	protected WebElement profileLogoutBtn;
+	
+	@FindBy(css=".popup-close-cross")
+	protected WebElement CKYCPopUpCloseBtn;
+	
 	public void clickLoginButton() {
 		clickElement(loginButton);
 	}
-
+	
+	public void clickCKYCCLoseBtn() {
+		clickElement(CKYCPopUpCloseBtn);
+	}
+	
+	public void clickUserProfile() {
+		clickElement(userProfile);
+	}
+	
+	public void clickUserLogoutBtn() {
+		clickElement(profileLogoutBtn);
+	}
 }
