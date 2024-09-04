@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.satfnRegBot.automationScripts.SecurityInterestRegistration">
+      <class name="com.satfnRegBot.automationScripts.SatisfactionRegisteration">
         <methods>
           <include name="setPropertiesAndLogger"/>
           <include name="launchBrowser"/>
-          <include name="satisfactionPage"/>
-          <include name="tearDown"/>
-          <include name="securityInterestRegistration"/>
+          <include name="invokeDigitalSignature"/>
           <include name="loginAsUser"/>
+          <include name="tearDown"/>
+          <include name="satisfactionRegister"/>
         </methods>
-      </class> <!-- com.satfnRegBot.automationScripts.SecurityInterestRegistration -->
+      </class> <!-- com.satfnRegBot.automationScripts.SatisfactionRegisteration -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

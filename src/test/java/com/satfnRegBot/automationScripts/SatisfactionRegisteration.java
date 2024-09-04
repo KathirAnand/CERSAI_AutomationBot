@@ -39,6 +39,7 @@ public class SatisfactionRegisteration extends BaseClass {
 	@BeforeClass
 	public void loginAsUser() throws InterruptedException {
 		HomePage homePage = new HomePage(driver);
+		homePage.clickCKYCCLoseBtn();
 		homePage.clickLoginButton();
 		Reporter.log("Login button clicked");
 		Thread.sleep(1000);
@@ -199,10 +200,11 @@ public class SatisfactionRegisteration extends BaseClass {
 						SIDetailsPage detailsPage = new SIDetailsPage(driver);
 						detailsPage.setDate(closedDate);
 
-//						Thread.sleep(1000);
-
-						detailsPage.selectReasonUseKeyboard();
-
+						Thread.sleep(1000);
+//						detailsPage.selectReasonUseKeyboard();
+						detailsPage.selectReason(props.getProperty("REASON"));
+						Thread.sleep(1000);
+						
 						if (detailsPage.reasonForDelayIsDisplayed()) {
 							detailsPage.setReason(props.getProperty("REASON"));
 						}

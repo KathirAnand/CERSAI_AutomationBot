@@ -1,61 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
-    <line>
-      <![CDATA[Login button clicked]]>
-    </line>
-    <line>
-      <![CDATA[400075601182 is already satisfied]]>
-    </line>
-    <line>
-      <![CDATA[400076302128 is already satisfied]]>
-    </line>
-    <line>
-      <![CDATA[400076395793 is already satisfied]]>
-    </line>
   </reporter-output>
-  <suite started-at="2024-03-18T10:18:46 IST" name="Command line suite" finished-at="2024-03-18T10:19:50 IST" duration-ms="63432">
+  <suite started-at="2024-09-04T12:59:45 IST" name="Default suite" finished-at="2024-09-04T12:59:58 IST" duration-ms="12997">
     <groups>
     </groups>
-    <test started-at="2024-03-18T10:18:46 IST" name="Command line test" finished-at="2024-03-18T10:19:50 IST" duration-ms="63432">
+    <test started-at="2024-09-04T12:59:45 IST" name="Default test" finished-at="2024-09-04T12:59:58 IST" duration-ms="12997">
       <class name="com.satfnRegBot.automationScripts.SatisfactionRegisteration">
-        <test-method is-config="true" signature="setPropertiesAndLogger()[pri:0, instance:com.satfnRegBot.automationScripts.SatisfactionRegisteration[frame0,100,100,450x350,invalid,hidden,layout=java.awt.BorderLayout,title=Automation InvBot,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,0x0,invalid,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]]" started-at="2024-03-18T10:18:45 IST" name="setPropertiesAndLogger" finished-at="2024-03-18T10:18:46 IST" duration-ms="1494" status="PASS">
+        <test-method is-config="true" signature="setPropertiesAndLogger()[pri:0, instance:com.satfnRegBot.automationScripts.SatisfactionRegisteration[frame0,100,100,450x350,invalid,hidden,layout=java.awt.BorderLayout,title=Automation InvBot,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,0x0,invalid,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]]" started-at="2024-09-04T12:59:44 IST" name="setPropertiesAndLogger" finished-at="2024-09-04T12:59:45 IST" duration-ms="1086" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setPropertiesAndLogger -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.satfnRegBot.automationScripts.SatisfactionRegisteration[frame0,100,100,450x350,invalid,hidden,layout=java.awt.BorderLayout,title=Automation InvBot,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,0x0,invalid,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]]" started-at="2024-03-18T10:18:46 IST" name="launchBrowser" finished-at="2024-03-18T10:18:56 IST" duration-ms="9290" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.satfnRegBot.automationScripts.SatisfactionRegisteration[frame0,100,100,450x350,invalid,hidden,layout=java.awt.BorderLayout,title=Automation InvBot,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,0x0,invalid,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]]" started-at="2024-09-04T12:59:45 IST" name="launchBrowser" finished-at="2024-09-04T12:59:58 IST" duration-ms="12860" status="FAIL">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
+            <message>
+              <![CDATA[Could not start a new session. Response code 400. Message: invalid argument: entry 0 of 'firstMatch' is invalid
+from invalid argument: cannot parse capability: goog:chromeOptions
+from invalid argument: unrecognized chrome option: credentials_enable_service 
+Host info: host: 'DESKTOP-7KK7B4E', ip: '192.168.137.177'
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], binary: C:\Program Files\Google\Chr..., credentials_enable_service: false, excludeSwitches: [enable-automation], extensions: [], profile.password_manager_enabled: false}}]}]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 400. Message: invalid argument: entry 0 of 'firstMatch' is invalid
+from invalid argument: cannot parse capability: goog:chromeOptions
+from invalid argument: unrecognized chrome option: credentials_enable_service 
+Host info: host: 'DESKTOP-7KK7B4E', ip: '192.168.137.177'
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], binary: C:\Program Files\Google\Chr..., credentials_enable_service: false, excludeSwitches: [enable-automation], extensions: [], profile.password_manager_enabled: false}}]}]
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:236)
+at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:163)
+at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:108)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+at com.satfnRegBot.testBase.BaseClass.launchBrowser(BaseClass.java:94)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
+at org.testng.TestRunner.beforeRun(TestRunner.java:627)
+at org.testng.TestRunner.run(TestRunner.java:589)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="loginAsUser()[pri:0, instance:com.satfnRegBot.automationScripts.SatisfactionRegisteration[frame0,100,100,450x350,invalid,hidden,layout=java.awt.BorderLayout,title=Automation InvBot,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,0x0,invalid,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]]" started-at="2024-03-18T10:18:56 IST" name="loginAsUser" finished-at="2024-03-18T10:19:30 IST" duration-ms="34313" status="PASS">
+        <test-method is-config="true" signature="loginAsUser()[pri:0, instance:com.satfnRegBot.automationScripts.SatisfactionRegisteration[frame0,100,100,450x350,invalid,hidden,layout=java.awt.BorderLayout,title=Automation InvBot,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,0x0,invalid,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]]" started-at="2024-09-04T12:59:58 IST" name="loginAsUser" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1725434998822" status="SKIP">
           <reporter-output>
-            <line>
-              <![CDATA[Login button clicked]]>
-            </line>
           </reporter-output>
         </test-method> <!-- loginAsUser -->
-        <test-method is-config="true" signature="invokeDigitalSignature()[pri:0, instance:com.satfnRegBot.automationScripts.SatisfactionRegisteration[frame0,100,100,450x350,invalid,hidden,layout=java.awt.BorderLayout,title=Automation InvBot,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,0x0,invalid,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]]" started-at="2024-03-18T10:19:30 IST" name="invokeDigitalSignature" finished-at="2024-03-18T10:19:40 IST" duration-ms="9874" status="PASS">
+        <test-method is-config="true" signature="invokeDigitalSignature()[pri:0, instance:com.satfnRegBot.automationScripts.SatisfactionRegisteration[frame0,100,100,450x350,invalid,hidden,layout=java.awt.BorderLayout,title=Automation InvBot,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,0x0,invalid,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]]" started-at="2024-09-04T12:59:58 IST" name="invokeDigitalSignature" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1725434998847" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeDigitalSignature -->
-        <test-method signature="satisfactionRegister()[pri:2, instance:com.satfnRegBot.automationScripts.SatisfactionRegisteration[frame0,100,100,450x350,invalid,hidden,layout=java.awt.BorderLayout,title=Automation InvBot,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,0x0,invalid,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]]" started-at="2024-03-18T10:19:40 IST" name="satisfactionRegister" finished-at="2024-03-18T10:19:49 IST" duration-ms="9533" status="PASS">
+        <test-method signature="satisfactionRegister()[pri:2, instance:com.satfnRegBot.automationScripts.SatisfactionRegisteration[frame0,100,100,450x350,invalid,hidden,layout=java.awt.BorderLayout,title=Automation InvBot,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,0x0,invalid,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]]" started-at="2024-09-04T12:59:58 IST" name="satisfactionRegister" finished-at="2024-09-04T12:59:58 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
+            <message>
+              <![CDATA[Could not start a new session. Response code 400. Message: invalid argument: entry 0 of 'firstMatch' is invalid
+from invalid argument: cannot parse capability: goog:chromeOptions
+from invalid argument: unrecognized chrome option: credentials_enable_service 
+Host info: host: 'DESKTOP-7KK7B4E', ip: '192.168.137.177'
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], binary: C:\Program Files\Google\Chr..., credentials_enable_service: false, excludeSwitches: [enable-automation], extensions: [], profile.password_manager_enabled: false}}]}]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 400. Message: invalid argument: entry 0 of 'firstMatch' is invalid
+from invalid argument: cannot parse capability: goog:chromeOptions
+from invalid argument: unrecognized chrome option: credentials_enable_service 
+Host info: host: 'DESKTOP-7KK7B4E', ip: '192.168.137.177'
+Build info: version: '4.12.1', revision: '8e34639b11'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], binary: C:\Program Files\Google\Chr..., credentials_enable_service: false, excludeSwitches: [enable-automation], extensions: [], profile.password_manager_enabled: false}}]}]
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:96)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:68)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:163)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:236)
+at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:163)
+at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:108)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:88)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:83)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:72)
+at com.satfnRegBot.testBase.BaseClass.launchBrowser(BaseClass.java:94)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:637)
+at org.testng.TestRunner.beforeRun(TestRunner.java:627)
+at org.testng.TestRunner.run(TestRunner.java:589)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
-            <line>
-              <![CDATA[400075601182 is already satisfied]]>
-            </line>
-            <line>
-              <![CDATA[400076302128 is already satisfied]]>
-            </line>
-            <line>
-              <![CDATA[400076395793 is already satisfied]]>
-            </line>
           </reporter-output>
         </test-method> <!-- satisfactionRegister -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.satfnRegBot.automationScripts.SatisfactionRegisteration[frame0,100,100,450x350,invalid,hidden,layout=java.awt.BorderLayout,title=Automation InvBot,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,0x0,invalid,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]]" started-at="2024-03-18T10:19:49 IST" name="tearDown" finished-at="2024-03-18T10:19:50 IST" duration-ms="341" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.satfnRegBot.automationScripts.SatisfactionRegisteration[frame0,100,100,450x350,invalid,hidden,layout=java.awt.BorderLayout,title=Automation InvBot,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,0,0,0x0,invalid,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]]" started-at="2024-09-04T12:59:58 IST" name="tearDown" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1725434998867" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.satfnRegBot.automationScripts.SatisfactionRegisteration -->
-    </test> <!-- Command line test -->
-  </suite> <!-- Command line suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

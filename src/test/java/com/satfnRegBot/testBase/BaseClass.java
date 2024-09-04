@@ -88,8 +88,8 @@ public class BaseClass extends MainRunner{
 			// to ignore the Chrome message as "Chrome is controlled by selenium"
 			ChromeOptions opt = new ChromeOptions();
 			opt.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
-			opt.setExperimentalOption("credentials_enable_service", false);
-			opt.setExperimentalOption("profile.password_manager_enabled", false);
+//			opt.setExperimentalOption("credentials_enable_service", false);
+//			opt.setExperimentalOption("profile.password_manager_enabled", false);
 			opt.addArguments("--remote-allow-origins=*");
 			driver = new ChromeDriver(opt);
 //			Reporter.log("Chrome browser opened",true);

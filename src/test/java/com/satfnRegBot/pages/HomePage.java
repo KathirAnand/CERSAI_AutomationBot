@@ -18,8 +18,15 @@ public class HomePage extends BasePage{
 	@FindBy(css="a[title='Login for Central Registry']")
 	protected WebElement loginButton;
 	
+	@FindBy(css=".popup-close-cross")
+	protected WebElement CKYCPopUpCloseBtn;
+	
 	public void clickLoginButton() {
 		clickElement(loginButton);
+	}
+	
+	public void clickCKYCCLoseBtn() {
+		clickElement(CKYCPopUpCloseBtn);
 	}
 
 }
