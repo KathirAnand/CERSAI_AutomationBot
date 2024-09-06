@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Command_line_suite" class="navigator-link">
-              <span class="suite-name border-failed">Command line suite</span>
+              <span class="suite-name border-passed">Command line suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,21 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Command_line_suite" class="hide-methods failed suite-Command_line_suite"> (hide)</a> <!-- hide-methods failed suite-Command_line_suite -->
-                      <a href="#" panel-name="suite-Command_line_suite" class="show-methods failed suite-Command_line_suite"> (show)</a> <!-- show-methods failed suite-Command_line_suite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Command_line_suite" class="hide-methods passed suite-Command_line_suite"> (hide)</a> <!-- hide-methods passed suite-Command_line_suite -->
+                      <a href="#" panel-name="suite-Command_line_suite" class="show-methods passed suite-Command_line_suite"> (show)</a> <!-- show-methods passed suite-Command_line_suite -->
                     </span>
-                    <div class="method-list-content failed suite-Command_line_suite">
+                    <div class="method-list-content passed suite-Command_line_suite">
                       <span>
-                        <img src="failed.png" width="3%"/>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Command_line_suite" title="com.satfnRegBot.automationScripts.SatisfactionRegisteration" class="method navigator-link" hash-for-method="satisfactionRegister">satisfactionRegister</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Command_line_suite -->
+                    </div> <!-- method-list-content passed suite-Command_line_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -119,9 +119,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Command_line_suite" class="panel Command_line_suite">
-          <div class="suite-Command_line_suite-class-failed">
+          <div class="suite-Command_line_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">com.satfnRegBot.automationScripts.SatisfactionRegisteration</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -130,53 +130,10 @@
                   <a name="satisfactionRegister">
                   </a> <!-- satisfactionRegister -->
                   <span class="method-name">satisfactionRegister</span>
-                  <div class="stack-trace">java.lang.RuntimeException
-	at com.satfnRegBot.pageActions.PageActions.visibleAndClick(PageActions.java:106)
-	at com.satfnRegBot.pages.UserHomePage.clickHamburgerIcon(UserHomePage.java:34)
-	at com.satfnRegBot.automationScripts.SatisfactionRegisteration.satisfactionRegister(SatisfactionRegisteration.java:303)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at com.satfnRegBot.runner.MainRunner$2.actionPerformed(MainRunner.java:150)
-	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1972)
-	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2313)
-	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
-	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
-	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
-	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6626)
-	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3389)
-	at java.desktop/java.awt.Component.processEvent(Component.java:6391)
-	at java.desktop/java.awt.Container.processEvent(Container.java:2266)
-	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5001)
-	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2324)
-	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4833)
-	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4948)
-	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4575)
-	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4516)
-	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2310)
-	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2780)
-	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4833)
-	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:775)
-	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
-	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
-	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
-	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:97)
-	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:747)
-	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
-	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
-	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:744)
-	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
-	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
-	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
-	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
-	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
-	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
-... Removed 24 stack frames
-</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Command_line_suite-class-failed -->
+          </div> <!-- suite-Command_line_suite-class-passed -->
         </div> <!-- panel Command_line_suite -->
         <div panel-name="test-xml-Command_line_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -232,12 +189,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'satisfactionRegister')
 data.setCell(0, 2, 'com.satfnRegBot.automationScripts.SatisfactionRegisteration')
-data.setCell(0, 3, 117806);
+data.setCell(0, 3, 667960);
 window.suiteTableData['Command_line_suite']= { tableData: data, tableDiv: 'times-div-Command_line_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 11 minutes</span>
               <div id="times-div-Command_line_suite">
               </div> <!-- times-div-Command_line_suite -->
             </div> <!-- times-div -->
@@ -251,10 +208,103 @@ return data;
             <div class="reporter-method-div">
               <span class="reporter-method-name">satisfactionRegister</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">400062749995 is satisfied with the Transaction ID 200319813613</span>
-                <span class="reporter-method-output">400062806989 is satisfied with the Transaction ID 200319813655</span>
-                <span class="reporter-method-output">400062811921 is satisfied with the Transaction ID 200319813688</span>
-                <span class="reporter-method-output">Unhandled error message</span>
+                <span class="reporter-method-output">400060342812 is already satisfied</span>
+                <span class="reporter-method-output">400060485406 is already satisfied</span>
+                <span class="reporter-method-output">400060485642 is already satisfied</span>
+                <span class="reporter-method-output">400060485928 is already satisfied</span>
+                <span class="reporter-method-output">400060508846 is already satisfied</span>
+                <span class="reporter-method-output">400060550815 is already satisfied</span>
+                <span class="reporter-method-output">400060579933 is already satisfied</span>
+                <span class="reporter-method-output">400060690578 is satisfied with the Transaction ID 200319881301</span>
+                <span class="reporter-method-output">400060904371 is satisfied with the Transaction ID 200319881356</span>
+                <span class="reporter-method-output">400060927740 is already satisfied</span>
+                <span class="reporter-method-output">400060929050 is satisfied with the Transaction ID 200319881476</span>
+                <span class="reporter-method-output">400060929091 is satisfied with the Transaction ID 200319881539</span>
+                <span class="reporter-method-output">400060929242 is satisfied with the Transaction ID 200319881661</span>
+                <span class="reporter-method-output">400060975277 is satisfied with the Transaction ID 200319881724</span>
+                <span class="reporter-method-output">400060982895 is already satisfied</span>
+                <span class="reporter-method-output">400060984584 is already satisfied</span>
+                <span class="reporter-method-output">400061005728 is already satisfied</span>
+                <span class="reporter-method-output">400061019812 is already satisfied</span>
+                <span class="reporter-method-output">400061023278 is already satisfied</span>
+                <span class="reporter-method-output">400061033342 is already satisfied</span>
+                <span class="reporter-method-output">400061035498 is already satisfied</span>
+                <span class="reporter-method-output">400061048856 is satisfied with the Transaction ID 200319881878</span>
+                <span class="reporter-method-output">400061049539 is already satisfied</span>
+                <span class="reporter-method-output">400061061668 is already satisfied</span>
+                <span class="reporter-method-output">400061065713 is already satisfied</span>
+                <span class="reporter-method-output">400061069264 is already satisfied</span>
+                <span class="reporter-method-output">400061074021 is already satisfied</span>
+                <span class="reporter-method-output">400061078715 is already satisfied</span>
+                <span class="reporter-method-output">400061080501 is satisfied with the Transaction ID 200319882017</span>
+                <span class="reporter-method-output">400061119922 is already satisfied</span>
+                <span class="reporter-method-output">400061120424 is already satisfied</span>
+                <span class="reporter-method-output">400061124984 is already satisfied</span>
+                <span class="reporter-method-output">400061135357 is already satisfied</span>
+                <span class="reporter-method-output">400061207425 is satisfied with the Transaction ID 200319882114</span>
+                <span class="reporter-method-output">400061209111 is satisfied with the Transaction ID 200319882179</span>
+                <span class="reporter-method-output">400061209733 is satisfied with the Transaction ID 200319882300</span>
+                <span class="reporter-method-output">400061209860 is satisfied with the Transaction ID 200319882375</span>
+                <span class="reporter-method-output">400061210709 is satisfied with the Transaction ID 200319882441</span>
+                <span class="reporter-method-output">400061211137 is satisfied with the Transaction ID 200319882525</span>
+                <span class="reporter-method-output">400061211879 is satisfied with the Transaction ID 200319882595</span>
+                <span class="reporter-method-output">400061225270 is satisfied with the Transaction ID 200319882682</span>
+                <span class="reporter-method-output">400061236893 is satisfied with the Transaction ID 200319882768</span>
+                <span class="reporter-method-output">400061238606 is already satisfied</span>
+                <span class="reporter-method-output">400061239954 is satisfied with the Transaction ID 200319882838</span>
+                <span class="reporter-method-output">400061239978 is satisfied with the Transaction ID 200319882899</span>
+                <span class="reporter-method-output">400061271146 is already satisfied</span>
+                <span class="reporter-method-output">400061273331 is already satisfied</span>
+                <span class="reporter-method-output">400061277100 is already satisfied</span>
+                <span class="reporter-method-output">400061278615 is satisfied with the Transaction ID 200319882961</span>
+                <span class="reporter-method-output">400061287545 is satisfied with the Transaction ID 200319883030</span>
+                <span class="reporter-method-output">400061296207 is satisfied with the Transaction ID 200319883114</span>
+                <span class="reporter-method-output">400061299848 is satisfied with the Transaction ID 200319883178</span>
+                <span class="reporter-method-output">400061302537 is satisfied with the Transaction ID 200319883290</span>
+                <span class="reporter-method-output">400061304877 is already satisfied</span>
+                <span class="reporter-method-output">400061304901 is already satisfied</span>
+                <span class="reporter-method-output">400061305206 is satisfied with the Transaction ID 200319883395</span>
+                <span class="reporter-method-output">400061307627 is satisfied with the Transaction ID 200319883465</span>
+                <span class="reporter-method-output">400061312961 is satisfied with the Transaction ID 200319883536</span>
+                <span class="reporter-method-output">400061313607 is satisfied with the Transaction ID 200319883613</span>
+                <span class="reporter-method-output">400061317158 is satisfied with the Transaction ID 200319883674</span>
+                <span class="reporter-method-output">400061317912 is satisfied with the Transaction ID 200319883723</span>
+                <span class="reporter-method-output">400061319146 is already satisfied</span>
+                <span class="reporter-method-output">400061320192 is satisfied with the Transaction ID 200319883847</span>
+                <span class="reporter-method-output">400061321112 is satisfied with the Transaction ID 200319883907</span>
+                <span class="reporter-method-output">400061321135 is satisfied with the Transaction ID 200319883977</span>
+                <span class="reporter-method-output">400061321153 is satisfied with the Transaction ID 200319884045</span>
+                <span class="reporter-method-output">400061362656 is already satisfied</span>
+                <span class="reporter-method-output">400061683009 is already satisfied</span>
+                <span class="reporter-method-output">400061711395 is already satisfied</span>
+                <span class="reporter-method-output">400061864289 is already satisfied</span>
+                <span class="reporter-method-output">400061864379 is already satisfied</span>
+                <span class="reporter-method-output">400061886250 is already satisfied</span>
+                <span class="reporter-method-output">400062176017 is already satisfied</span>
+                <span class="reporter-method-output">400062179292 is already satisfied</span>
+                <span class="reporter-method-output">400062179535 is already satisfied</span>
+                <span class="reporter-method-output">400062749995 is already satisfied</span>
+                <span class="reporter-method-output">400062806989 is already satisfied</span>
+                <span class="reporter-method-output">400062811921 is already satisfied</span>
+                <span class="reporter-method-output">400067488759 is already satisfied</span>
+                <span class="reporter-method-output">400067493763 is already satisfied</span>
+                <span class="reporter-method-output">400067494148 is already satisfied</span>
+                <span class="reporter-method-output">400067494697 is already satisfied</span>
+                <span class="reporter-method-output">400067496644 is already satisfied</span>
+                <span class="reporter-method-output">400067509577 is already satisfied</span>
+                <span class="reporter-method-output">400067530968 is already satisfied</span>
+                <span class="reporter-method-output">400067536924 is already satisfied</span>
+                <span class="reporter-method-output">400067849605 is already satisfied</span>
+                <span class="reporter-method-output">400069664473 is already satisfied</span>
+                <span class="reporter-method-output">400069664579 is already satisfied</span>
+                <span class="reporter-method-output">400069665492 is already satisfied</span>
+                <span class="reporter-method-output">400069665749 is already satisfied</span>
+                <span class="reporter-method-output">400069752498 is already satisfied</span>
+                <span class="reporter-method-output">400070922799 is already satisfied</span>
+                <span class="reporter-method-output">400072173575 is already satisfied</span>
+                <span class="reporter-method-output">400072535318 is already satisfied</span>
+                <span class="reporter-method-output">400075256713 is already satisfied</span>
+                <span class="reporter-method-output">400076295770 is already satisfied</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -279,31 +329,23 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">launchBrowser</span>
-                <span class="method-start">977 ms</span>
+                <span class="method-start">913 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">loginAsUser</span>
-                <span class="method-start">11687 ms</span>
+                <span class="method-start">12407 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">invokeDigitalSignature</span>
-                <span class="method-start">38445 ms</span>
+                <span class="method-start">40466 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">satisfactionRegister</span>
-                <span class="method-start">60656 ms</span>
+                <span class="method-start">51134 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">userLogOut</span>
-                <span class="method-start">178464 ms</span>
-              </div> <!-- configuration-class after -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">178482 ms</span>
+                <span class="method-start">719096 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

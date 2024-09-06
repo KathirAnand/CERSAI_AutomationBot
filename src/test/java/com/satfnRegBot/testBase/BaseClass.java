@@ -132,7 +132,12 @@ public class BaseClass extends MainRunner {
 		HomePage homePage = new HomePage(driver);
 		homePage.clickUserProfile();
 		homePage.clickUserLogoutBtn();
-
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		driver.close();
 		EmailUtility email = new EmailUtility();
 		email.sendEmail();

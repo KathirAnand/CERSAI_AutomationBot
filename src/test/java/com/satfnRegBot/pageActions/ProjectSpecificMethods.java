@@ -115,14 +115,14 @@ public class ProjectSpecificMethods extends BaseClass {
 	
 	public static long daysCount(String date) throws ParseException {
 		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-//		SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+//		SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy"); CERSAI Portal is updated so that closed date format is changed
 		Date startDate = format.parse(date); 
 		
 		Date endDate=format.parse(format.format(Calendar.getInstance().getTime()));
 		
 		long diff = startDate.getTime() - endDate.getTime();
 		long diffDays = Math.abs(diff / 1000 / 60 / 60 / 24);
-		System.out.println(diffDays);
+//		System.out.println(diffDays);
 		return diffDays;
 	}
 	
