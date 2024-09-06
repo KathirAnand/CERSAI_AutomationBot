@@ -24,6 +24,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.satfnRegBot.pageActions.ProjectSpecificMethods;
+import com.satfnRegBot.pages.HomePage;
 import com.satfnRegBot.runner.MainRunner;
 //import com.satfnRegBot.utilities.EmailUtility;
 import com.satfnRegBot.utilities.EmailUtility;
@@ -128,6 +129,10 @@ public class BaseClass extends MainRunner {
 	 */
 	@AfterTest
 	public void tearDown() throws IOException {
+		HomePage homePage = new HomePage(driver);
+		homePage.clickUserProfile();
+		homePage.clickUserLogoutBtn();
+
 		driver.close();
 		EmailUtility email = new EmailUtility();
 		email.sendEmail();

@@ -1,0 +1,4 @@
+400062749995 is satisfied with the Transaction ID 200319813613
+400062806989 is satisfied with the Transaction ID 200319813655
+400062811921 is satisfied with the Transaction ID 200319813688
+Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@id='success']/descendant::div[contains(text(),'Successfully Satisfied')]' (tried for 40 second(s) with 500 milliseconds interval)

@@ -1,6 +1,6 @@
 package com.satfnRegBot.automationScripts;
 
-import org.testng.annotations.AfterClass;
+//import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -226,8 +226,9 @@ public class SatisfactionRegisteration extends BaseClass {
 								detailsPage.setReason(props.getProperty("REASON"));
 							}
 						}
-
+						Thread.sleep(1000);
 						detailsPage.clickSubmitButton();
+						Thread.sleep(1000);
 						SatisfactionSuccessPage successPage = new SatisfactionSuccessPage(driver);
 						transID = successPage.getTransactionID();
 
@@ -311,10 +312,4 @@ public class SatisfactionRegisteration extends BaseClass {
 
 	}
 	
-	@AfterClass
-	public void userLogOut() {
-		HomePage homePage = new HomePage(driver);
-		homePage.clickUserProfile();
-		homePage.clickUserLogoutBtn();
-	}
 }
