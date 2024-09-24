@@ -1,0 +1,40 @@
+400061676639 is already satisfied
+400062391263 is satisfied with the Transaction ID 200321785066
+400037150296 is satisfied with the Transaction ID 200321785131
+400060690509 is satisfied with the Transaction ID 200321785190
+400061210280 is satisfied with the Transaction ID 200321785254
+400070363766 is satisfied with the Transaction ID 200321785324
+400039270022 is satisfied with the Transaction ID 200321785383
+400059907131 is satisfied with the Transaction ID 200321785442
+400071521965 is satisfied with the Transaction ID 200321785513
+400072652896 is satisfied with the Transaction ID 200321785581
+400069195029 is satisfied with the Transaction ID 200321785653
+400060731987 is satisfied with the Transaction ID 200321785719
+400069595024 is satisfied with the Transaction ID 200321785796
+400039233042 is satisfied with the Transaction ID 200321785873
+400061127169 is satisfied with the Transaction ID 200321785962
+400061092780 is satisfied with the Transaction ID 200321786042
+400067442899 is satisfied with the Transaction ID 200321786109
+400061322020 is satisfied with the Transaction ID 200321786197
+400060562338 is satisfied with the Transaction ID 200321786271
+400061311814 is satisfied with the Transaction ID 200321786356
+400061277272 is satisfied with the Transaction ID 200321786434
+400061209838 is satisfied with the Transaction ID 200321786523
+400031271091 is already satisfied
+400060668623 is satisfied with the Transaction ID 200321786591
+400071579627 is satisfied with the Transaction ID 200321786668
+400060668694 is satisfied with the Transaction ID 200321786754
+400064786662 is satisfied with the Transaction ID 200321786824
+400039268722 is satisfied with the Transaction ID 200321786876
+400062427965 is satisfied with the Transaction ID 200321786953
+400037778905 is satisfied with the Transaction ID 200321787032
+400039183247 is satisfied with the Transaction ID 200321787102
+400061637136 is satisfied with the Transaction ID 200321787180
+400061047683 is satisfied with the Transaction ID 200321787268
+400030289060 is satisfied with the Transaction ID 200321787363
+400060690281 is satisfied with the Transaction ID 200321787435
+400063912380 is satisfied with the Transaction ID 200321787557
+400069796728 is satisfied with the Transaction ID 200321787669
+400029920306 is satisfied with the Transaction ID 200321787781
+400071251020 is satisfied with the Transaction ID 200321787909
+Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@id='success']/descendant::div[contains(text(),'Successfully Satisfied')]' (tried for 40 second(s) with 500 milliseconds interval)
